@@ -191,7 +191,11 @@ main {
 }
 
 .image--up {
-  grid-area: 2 / 3;
+  grid-area: 1 / 1;
+}
+
+.image--down {
+  grid-area: 3 / 3;
 }
 
 .image__inner {
@@ -202,8 +206,14 @@ main {
   border-radius: 5%;
 }
 
+.image__inner :after {
+  content: "↗";
+  padding-bottom: 100%;
+  display: block;
+}
+
 .row--1 {
-  grid-area: 1 / 1 / 2 / 4;
+  grid-area: 1 / 2 / 2 / 4;
 }
 
 .row--2 {
@@ -383,4 +393,4 @@ main {
   }
 }
 
-/*# sourceMappingURL=index.d046a61c.css.map */
+/*# sourceMappingURL=index.cfff48f7.css.map */

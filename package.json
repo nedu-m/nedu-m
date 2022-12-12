@@ -11,10 +11,12 @@
   },
   "keywords": [],
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.1",
     "parcel": "^2.4.1"
   },
   "dependencies": {
     "gsap": "^3.10.2",
-    "imagesloaded": "^5.0.0"
+    "imagesloaded": "^5.0.0",
+    "sass": "^1.56.2"
   }
 }
