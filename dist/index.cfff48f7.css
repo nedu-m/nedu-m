@@ -97,19 +97,15 @@ main {
   z-index: 100;
   flex-direction: column;
   grid-area: 1 / 1 / 2 / 2;
-  align-self: start;
+  align-self: flex-start;
   display: flex;
   position: relative;
 }
 
-.frame__title {
-  margin: 1rem 0;
-  font-size: 1rem;
-  font-weight: normal;
-}
-
 .frame__links {
-  display: inline-block;
+  justify-content: center;
+  margin-top: 1.5vw;
+  display: flex;
 }
 
 .frame__links a {
@@ -205,19 +201,21 @@ main {
 
 @media screen and (min-width: 53em) {
   .frame {
-    flex-direction: row;
-  }
-
-  .frame__title {
-    margin-top: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
   }
 
   .frame__links {
-    margin-left: 8vw;
+    gap: 1vw;
+    margin-left: 0;
+    font-size: 1vw;
   }
 
-  .content__row--text {
-    padding: calc(var(--padding-hor)  + 4rem) 0 2.5rem;
+  .frame__links a:hover {
+    color: #c11;
+    outline: none;
   }
 }
 
