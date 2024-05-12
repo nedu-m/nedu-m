@@ -1,3 +1,3 @@
 # ABOUT
 
-Thinkering on retrogems.
+Tinkering with retrogems.
