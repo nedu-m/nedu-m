@@ -1,3 +1,3 @@
 # ABOUT
 
-Tinkering with retrogems.
+Tinkering with code at the intersection of technology and business.
