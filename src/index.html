@@ -1,114 +1,182 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Creative Frontend Dev</title>
 
-    <link rel="stylesheet" href="https://use.typekit.net/jdl7wqk.css" />
-    <link rel="stylesheet" type="text/css" href="css/base.scss" />
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <script>
-      document.documentElement.className = "js";
-      var supportsCssVars = function () {
-        var e,
-          t = document.createElement("style");
-        return (
-          (t.innerHTML = "root: { --tmp-var: bold; }"),
-          document.head.appendChild(t),
-          (e = !!(
-            window.CSS &&
-            window.CSS.supports &&
-            window.CSS.supports("font-weight", "var(--tmp-var)")
-          )),
-          t.parentNode.removeChild(t),
-          e
-        );
-      };
-      supportsCssVars() ||
-        alert(
-          "Please view this demo in a modern browser that supports CSS Variables."
-        );
-    </script>
-  </head>
-  <body class="loading">
-    <main>
-      <div class="frame">
-        <nav class="frame__links">
-          <a class="hover-line" href="https://github.com/nedu-m">GitHub</a>
-          <a
-            class="hover-line"
-            href="https://www.linkedin.com/in/chukwunedum-davidson-24a1aa21b/"
-            >LinkedIn</a
-          >
-          <a
-            class="hover-line"
-            href="https://docs.google.com/document/d/19a280C6vwxGJFDU8uZQ90ki3DjGFyQ6RRJSQ_5OITao/edit"
-            >Resume</a
-          >
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chukwunedum Davidson - Technical Solutions Engineer</title>
+
+  <link rel="stylesheet" href="https://use.typekit.net/jdl7wqk.css" />
+  <link rel="stylesheet" type="text/css" href="css/base.scss" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script>
+    document.documentElement.className = "js";
+    var supportsCssVars = function () {
+      var e,
+        t = document.createElement("style");
+      return (
+        (t.innerHTML = "root: { --tmp-var: bold; }"),
+        document.head.appendChild(t),
+        (e = !!(
+          window.CSS &&
+          window.CSS.supports &&
+          window.CSS.supports("font-weight", "var(--tmp-var)")
+        )),
+        t.parentNode.removeChild(t),
+        e
+      );
+    };
+    supportsCssVars() ||
+      alert(
+        "Please view this demo in a modern browser that supports CSS Variables."
+      );
+  </script>
+</head>
+
+<body class="loading">
+  <main>
+    <div class="frame">
+      <nav class="frame__links">
+        <a class="hover-line" href="#solve">What I Solve</a>
+        <a class="hover-line" href="#work">How I Work</a>
+        <a class="hover-line" href="#built">Built</a>
+        <a class="hover-line" href="#building">Building</a>
+        <a class="hover-line" href="#learning">Learning</a>
+        <a class="hover-line" href="#podcasts">Podcasts</a>
+        <a class="hover-line" href="https://github.com/nedu-m">GitHub</a>
+        <a class="hover-line" href="https://www.linkedin.com/in/chukwunedum-davidson-24a1aa21b/">LinkedIn</a>
+      </nav>
+    </div>
+    <div class="intro">
+      <div class="intro__header">
+        <h1 class="intro__name">Chukwunedum Davidson</h1>
+        <p class="intro__title">Technical Solutions Engineer</p>
       </div>
-      <div class="intro">
-        <div class="row row--1">
-          <span class="row__text oh"
-            ><span data-direction="top">Nedum — Creative</span></span
-          >
-        </div>
-        <div class="row row--2">
-          <span class="row__text oh"
-            ><span data-direction="left">
-              Frontend Dev
-              <img class="techmoji" src="img/tech.png" alt="" /> </span
-          ></span>
-        </div>
-        <div class="row row--3">
-          <span class="row__text oh"
-            ><span data-direction="top">Based in</span></span
-          >
-          <span class="row__text oh"
-            ><span data-direction="right">Lagos, NG</span></span
-          >
+
+      <div class="intro__core">
+        <p>Building high-leverage systems at the intersection of code, cloud and business operations.</p>
+      </div>
+
+      <div id="solve" class="intro__solve">
+        <h2>What I Solve</h2>
+        <p>I design and implement end-to-end systems that align people, process and technology to remove bottlenecks and
+          scale execution.</p>
+      </div>
+
+      <div id="work" class="intro__work">
+        <h2>How I Work</h2>
+        <ul>
+          <li>5 years in software development, cloud and cybersecurity engineering.</li>
+          <li>Hands-on enterprise presales and workflow automation across product and revenue teams.</li>
+          <li>Build internal tools, services and integrations across modern cloud environments.</li>
+          <li>Apply systems thinking to map constraints, architect flows and deliver scalable technical solutions.</li>
+        </ul>
+      </div>
+
+      <div id="built" class="intro__projects">
+        <h2>Things I've Built</h2>
+        <div class="projects">
+          <div class="project" aria-expanded="false">
+            <button class="project__toggle" aria-expanded="false">
+              <span class="project__title">TechPolicyAdvisory</span>
+              <span class="project__icon">+</span>
+            </button>
+            <div class="project__content">
+              <p class="project__description">A digital intelligence platform providing analysis and insights on
+                Africa's digital policy landscape and regulatory environment.</p>
+              <a href="https://techpolicyadvisory.com/" target="_blank" rel="noopener noreferrer"
+                class="project__link">Visit site →</a>
+              <p class="project__note">Built from idea to live deployment end-to-end for the client.</p>
+            </div>
+          </div>
+
+          <div class="project" aria-expanded="false">
+            <button class="project__toggle" aria-expanded="false">
+              <span class="project__title">Jasan Mentorship</span>
+              <span class="project__icon">+</span>
+            </button>
+            <div class="project__content">
+              <p class="project__description">A mentorship platform for legal professionals that standardizes the
+                selection process, matches mentors with mentees based on practice areas and goals, and provides a
+                centralized dashboard for tracking progress, sessions, and certifications.</p>
+              <a href="https://mentorship.jasan-foundation.org/" target="_blank" rel="noopener noreferrer"
+                class="project__link">Visit site →</a>
+              <p class="project__note">Built from idea to live deployment end-to-end for the client.</p>
+            </div>
+          </div>
         </div>
       </div>
-    </main>
-    <svg class="cursor" width="100" height="100" viewBox="0 0 100 100">
-      <defs>
-        <filter
-          id="cursor-filter"
-          x="-50%"
-          y="-50%"
-          width="200%"
-          height="200%"
-          filterUnits="objectBoundingBox"
-        >
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0"
-            numOctaves="1"
-            result="warp"
-          />
-          <feOffset dx="0" result="warpOffset" />
-          <feDisplacementMap
-            xChannelSelector="R"
-            yChannelSelector="G"
-            scale="40"
-            in="SourceGraphic"
-            in2="warpOffset"
-          />
-        </filter>
-      </defs>
-      <circle class="cursor__inner" cx="50" cy="50" r="10" />
-    </svg>
-    <svg
-      class="cursor"
-      width="100"
-      height="100"
-      viewBox="0 0 100 100"
-      data-amt="0.15"
-      data-radius-enter="40"
-    >
-      <circle class="cursor__inner" cx="50" cy="50" r="10" />
-    </svg>
-    <script type="module" src="js/index.js"></script>
-  </body>
+
+      <div id="building" class="intro__building">
+        <h2>What I'm Building Currently</h2>
+        <div class="projects">
+          <div class="project project--building" aria-expanded="false">
+            <button class="project__toggle" aria-expanded="false">
+              <span class="project__title">PrepCall</span>
+              <span class="project__icon">+</span>
+            </button>
+            <div class="project__content">
+              <p class="project__description">AI-powered intelligence brief generation for presales meetings. Get
+                comprehensive company research, technical analysis, and meeting preparation in seconds instead of hours.
+              </p>
+              <a href="https://github.com/nedu-m/prepcall" target="_blank" rel="noopener noreferrer"
+                class="project__link">View on GitHub →</a>
+              <p class="project__note">Currently in active development.</p>
+            </div>
+          </div>
+
+          <div class="project project--building" aria-expanded="false">
+            <button class="project__toggle" aria-expanded="false">
+              <span class="project__title">RigorJobs</span>
+              <span class="project__icon">+</span>
+            </button>
+            <div class="project__content">
+              <p class="project__description">A portfolio-first job board for African technical talent, connecting
+                skilled developers with employers through verified portfolios. Employers can see real evidence of skills
+                through GitHub repositories, CI status, video walkthroughs, and live deployments before interviews.</p>
+              <p class="project__note">Currently in active development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="learning" class="intro__learning">
+        <h2>What I'm Learning</h2>
+        <ul class="learning__list">
+          <li>Lean Startup <em>by Eric Ries</em></li>
+          <li>The Mom Test <em>by Rob Fitzpatrick</em></li>
+          <li>The Hard Thing About Hard Things <em>by Ben Horowitz</em></li>
+          <li>12 Rules for Life <em>by Jordan B. Peterson</em></li>
+        </ul>
+      </div>
+
+      <div id="podcasts" class="intro__podcasts">
+        <h2>Podcasts</h2>
+        <ul class="learning__list">
+          <li><a href="https://nav.al/" target="_blank" rel="noopener noreferrer">Naval Podcast</a></li>
+          <li><a href="https://open.spotify.com/show/0wjYlCNxLDgFUUjZMaP6Dx" target="_blank" rel="noopener noreferrer">A
+              Bit of Optimism</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <a href="mailto:edu.davidson@proton.me">shoot an email @ edu.davidson@proton.me</a>
+  </footer>
+  <svg class="cursor" width="100" height="100" viewBox="0 0 100 100">
+    <defs>
+      <filter id="cursor-filter" x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox">
+        <feTurbulence type="fractalNoise" baseFrequency="0" numOctaves="1" result="warp" />
+        <feOffset dx="0" result="warpOffset" />
+        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="40" in="SourceGraphic" in2="warpOffset" />
+      </filter>
+    </defs>
+    <circle class="cursor__inner" cx="50" cy="50" r="10" />
+  </svg>
+  <svg class="cursor" width="100" height="100" viewBox="0 0 100 100" data-amt="0.15" data-radius-enter="40">
+    <circle class="cursor__inner" cx="50" cy="50" r="10" />
+  </svg>
+  <script type="module" src="js/index.js"></script>
+</body>
+
 </html>
