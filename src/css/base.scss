@@ -289,6 +289,9 @@ main {
   font-size: clamp(0.9375rem, 2.2vw, 1.25rem);
   color: var(--color-text);
   transition: background-color 0.2s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 .project__toggle:hover {

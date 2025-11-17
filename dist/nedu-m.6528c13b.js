@@ -715,20 +715,30 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"6kb64":[function(require,module,exports,__globalThis) {
 var _cursor = require("./cursor");
-// Initialize custom cursor
-new (0, _cursor.Cursor)(document.querySelectorAll('.cursor'), 'a, .project__toggle');
-// Project expand/collapse functionality
-const projectToggles = document.querySelectorAll('.project__toggle');
-projectToggles.forEach((toggle)=>{
-    toggle.addEventListener('click', (e)=>{
-        e.preventDefault();
-        const project = toggle.closest('.project');
-        const isExpanded = project.getAttribute('aria-expanded') === 'true';
-        const newState = !isExpanded ? 'true' : 'false';
-        project.setAttribute('aria-expanded', newState);
-        toggle.setAttribute('aria-expanded', newState);
+// Initialize when DOM is ready
+function init() {
+    // Initialize custom cursor
+    new (0, _cursor.Cursor)(document.querySelectorAll('.cursor'), 'a, .project__toggle');
+    // Project expand/collapse functionality
+    const projectToggles = document.querySelectorAll('.project__toggle');
+    projectToggles.forEach((toggle)=>{
+        // Handle both click and touch events for mobile
+        const handleToggle = (e)=>{
+            e.preventDefault();
+            e.stopPropagation();
+            const project = toggle.closest('.project');
+            const isExpanded = project.getAttribute('aria-expanded') === 'true';
+            const newState = !isExpanded ? 'true' : 'false';
+            project.setAttribute('aria-expanded', newState);
+            toggle.setAttribute('aria-expanded', newState);
+        };
+        toggle.addEventListener('click', handleToggle);
+        toggle.addEventListener('touchend', handleToggle);
     });
-});
+}
+// Run when DOM is ready
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+else init();
 
 },{"./cursor":"czxmt"}],"czxmt":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
