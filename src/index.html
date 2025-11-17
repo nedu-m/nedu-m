@@ -77,7 +77,7 @@
         <h2>Things I've Built</h2>
         <div class="projects">
           <div class="project" aria-expanded="false">
-            <button class="project__toggle" aria-expanded="false">
+            <button type="button" class="project__toggle" aria-expanded="false">
               <span class="project__title">TechPolicyAdvisory</span>
               <span class="project__icon">+</span>
             </button>
@@ -91,7 +91,7 @@
           </div>
 
           <div class="project" aria-expanded="false">
-            <button class="project__toggle" aria-expanded="false">
+            <button type="button" class="project__toggle" aria-expanded="false">
               <span class="project__title">Jasan Mentorship</span>
               <span class="project__icon">+</span>
             </button>
@@ -111,7 +111,7 @@
         <h2>What I'm Building Currently</h2>
         <div class="projects">
           <div class="project project--building" aria-expanded="false">
-            <button class="project__toggle" aria-expanded="false">
+            <button type="button" class="project__toggle" aria-expanded="false">
               <span class="project__title">PrepCall</span>
               <span class="project__icon">+</span>
             </button>
@@ -126,7 +126,7 @@
           </div>
 
           <div class="project project--building" aria-expanded="false">
-            <button class="project__toggle" aria-expanded="false">
+            <button type="button" class="project__toggle" aria-expanded="false">
               <span class="project__title">RigorJobs</span>
               <span class="project__icon">+</span>
             </button>
@@ -177,6 +177,40 @@
     <circle class="cursor__inner" cx="50" cy="50" r="10" />
   </svg>
   <script type="module" src="js/index.js"></script>
+  <!-- Fallback for project toggles if module fails -->
+  <script>
+    // Inline fallback for maximum compatibility
+    (function() {
+      function setupProjectToggles() {
+        var toggles = document.querySelectorAll('.project__toggle');
+        toggles.forEach(function(toggle) {
+          if (toggle.dataset.setup) return;
+          toggle.dataset.setup = 'true';
+          
+          var handler = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var project = toggle.closest('.project');
+            if (!project) return;
+            var isExpanded = project.getAttribute('aria-expanded') === 'true';
+            var newState = isExpanded ? 'false' : 'true';
+            project.setAttribute('aria-expanded', newState);
+            toggle.setAttribute('aria-expanded', newState);
+          };
+          
+          toggle.addEventListener('click', handler);
+          toggle.addEventListener('touchend', handler);
+        });
+      }
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupProjectToggles);
+      } else {
+        setupProjectToggles();
+      }
+      setTimeout(setupProjectToggles, 100);
+    })();
+  </script>
 </body>
 
 </html>
