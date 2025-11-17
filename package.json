@@ -2,7 +2,7 @@
   "name": "v4-folio",
   "version": "1.0.0",
   "engines": {
-    "node": ">=24.0.0"
+    "node": ">=22.0.0"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "description": "",
