@@ -723,9 +723,10 @@ function initProjects() {
         return;
     }
     projectToggles.forEach((toggle)=>{
-        // Skip if already initialized
-        if (toggle.dataset.initialized === 'true') return;
+        // Skip if already initialized (check both flags to coordinate with inline script)
+        if (toggle.dataset.initialized === 'true' || toggle.dataset.setup === 'true') return;
         toggle.dataset.initialized = 'true';
+        toggle.dataset.setup = 'true';
         // Handle both click and touch events for mobile
         const handleToggle = (e)=>{
             e.preventDefault();

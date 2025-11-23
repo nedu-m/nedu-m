@@ -1,35 +1,36 @@
 // Project expand/collapse functionality - must work independently
 function initProjects() {
     const projectToggles = document.querySelectorAll('.project__toggle');
-    
+
     if (projectToggles.length === 0) {
         // Retry if elements aren't ready yet
         setTimeout(initProjects, 100);
         return;
     }
-    
+
     projectToggles.forEach(toggle => {
-        // Skip if already initialized
-        if (toggle.dataset.initialized === 'true') {
+        // Skip if already initialized (check both flags to coordinate with inline script)
+        if (toggle.dataset.initialized === 'true' || toggle.dataset.setup === 'true') {
             return;
         }
         toggle.dataset.initialized = 'true';
-        
+        toggle.dataset.setup = 'true';
+
         // Handle both click and touch events for mobile
         const handleToggle = (e) => {
             e.preventDefault();
             e.stopPropagation();
-            
+
             const project = toggle.closest('.project');
             if (!project) return;
-            
+
             const isExpanded = project.getAttribute('aria-expanded') === 'true';
             const newState = !isExpanded ? 'true' : 'false';
-            
+
             project.setAttribute('aria-expanded', newState);
             toggle.setAttribute('aria-expanded', newState);
         };
-        
+
         // Use passive: false to allow preventDefault
         toggle.addEventListener('click', handleToggle, { passive: false });
         toggle.addEventListener('touchend', handleToggle, { passive: false });

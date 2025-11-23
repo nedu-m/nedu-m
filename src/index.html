@@ -50,26 +50,30 @@
     <div class="intro">
       <div class="intro__header">
         <h1 class="intro__name">Chukwunedum Davidson</h1>
-        <p class="intro__title">Technical Solutions Engineer</p>
+        <p class="intro__title">Problem-Driven Product Builder</p>
       </div>
 
       <div class="intro__core">
-        <p>Building high-leverage systems at the intersection of code, cloud and business operations.</p>
+        <p>I build end-to-end software products that solve overlooked real-world problems. My process is simple: find a
+          bottleneck, design a system around it, ship the solution, and analyze the results.</p>
       </div>
 
       <div id="solve" class="intro__solve">
         <h2>What I Solve</h2>
-        <p>I design and implement end-to-end systems that align people, process and technology to remove bottlenecks and
-          scale execution.</p>
+        <p>I find real-world inefficiencies and build production-ready systems that fix them. Specifically, I focus on
+          credibility and trust gaps, research and synthesis bottlenecks, and operational inefficiencies in niche
+          domains.</p>
       </div>
 
       <div id="work" class="intro__work">
         <h2>How I Work</h2>
         <ul>
-          <li>5 years in software development, cloud and cybersecurity engineering.</li>
-          <li>Hands-on enterprise presales and workflow automation across product and revenue teams.</li>
-          <li>Build internal tools, services and integrations across modern cloud environments.</li>
-          <li>Apply systems thinking to map constraints, architect flows and deliver scalable technical solutions.</li>
+          <li><strong>Problem Discovery:</strong> Spotting inefficiencies, understanding market dynamics, and
+            identifying blind spots in existing solutions.</li>
+          <li><strong>System Architecture & Building:</strong> Designing flows, selecting the right stack, managing
+            tradeoffs, and transitioning from prototype to production.</li>
+          <li><strong>Result Synthesis:</strong> Analyzing what worked, understanding customer behavior, and deriving
+            business insights for the next iteration.</li>
         </ul>
       </div>
 
@@ -180,14 +184,15 @@
   <!-- Fallback for project toggles if module fails -->
   <script>
     // Inline fallback for maximum compatibility
-    (function() {
+    (function () {
       function setupProjectToggles() {
         var toggles = document.querySelectorAll('.project__toggle');
-        toggles.forEach(function(toggle) {
-          if (toggle.dataset.setup) return;
+        toggles.forEach(function (toggle) {
+          if (toggle.dataset.setup || toggle.dataset.initialized) return;
           toggle.dataset.setup = 'true';
-          
-          var handler = function(e) {
+          toggle.dataset.initialized = 'true';
+
+          var handler = function (e) {
             e.preventDefault();
             e.stopPropagation();
             var project = toggle.closest('.project');
@@ -197,12 +202,12 @@
             project.setAttribute('aria-expanded', newState);
             toggle.setAttribute('aria-expanded', newState);
           };
-          
+
           toggle.addEventListener('click', handler);
-          toggle.addEventListener('touchend', handler);
+          toggle.addEventListener('touchend', handler, { passive: false });
         });
       }
-      
+
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', setupProjectToggles);
       } else {
