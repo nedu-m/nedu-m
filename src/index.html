@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chukwunedum Davidson - Senior Frontend Engineer</title>
+  <title>Chukwunedum Davidson - Senior Software Engineer</title>
 
   <link rel="preconnect" href="https://use.typekit.net" crossorigin />
   <link rel="stylesheet" href="https://use.typekit.net/jdl7wqk.css" />
@@ -35,26 +35,28 @@
 
 <body>
   <main>
-    <div class="frame">
-      <nav class="frame__links">
-        <a class="hover-line" href="#solve">What I Solve</a>
-        <a class="hover-line" href="#work">How I Work</a>
-        <a class="hover-line" href="#built">Built</a>
-        <a class="hover-line" href="#building">Building</a>
-        <a class="hover-line" href="#learning">Learning</a>
-        <a class="hover-line" href="#podcasts">Podcasts</a>
-        <a class="hover-line external-link" href="https://github.com/nedu-m" target="_blank" rel="noopener noreferrer">GitHub</a>
-
+    <header class="frame">
+      <button class="frame__menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <span class="frame__menu-icon"></span>
+      </button>
+      <nav class="frame__nav">
+        <a class="frame__link" href="#solve">Skills</a>
+        <a class="frame__link" href="#work">How I Work</a>
+        <a class="frame__link" href="#built">Built</a>
+        <a class="frame__link" href="#building">Building</a>
+        <a class="frame__link" href="#learning">Learning</a>
+        <a class="frame__link" href="#podcasts">Podcasts</a>
+        <a class="frame__link external-link" href="https://github.com/nedu-m" target="_blank" rel="noopener noreferrer">GitHub</a>
       </nav>
-    </div>
+    </header>
     <div class="intro">
       <div class="intro__header">
         <h1 class="intro__name">Chukwunedum Davidson</h1>
-        <p class="intro__title">Senior Frontend Engineer</p>
+        <p class="intro__title">Senior Software Engineer</p>
       </div>
 
       <div class="intro__core">
-        <p>5+ years building high-performance, user-centric interfaces. I ship production-ready React applications that scale—from enterprise SaaS platforms to products serving thousands of users.</p>
+        <p>5+ years building production systems end-to-end—from high-performance React interfaces to Node.js APIs and cloud infrastructure. I ship software that scales, mentor engineers who land jobs, and help businesses figure out what to build.</p>
       </div>
 
       <div class="intro__stats">
@@ -67,8 +69,8 @@
           <span class="stat__label">Monthly Active Users</span>
         </div>
         <div class="stat">
-          <span class="stat__number">9</span>
-          <span class="stat__label">Developers Mentored</span>
+          <span class="stat__number">78%</span>
+          <span class="stat__label">Mentee Placement Rate</span>
         </div>
       </div>
 
@@ -77,19 +79,23 @@
         <div class="skills-grid">
           <div class="skill-group">
             <h3>Frontend</h3>
-            <p>React, Next.js, TypeScript, TailwindCSS, Accessibility (WCAG)</p>
+            <p>React, Next.js, TypeScript, TailwindCSS, Accessibility (WCAG), Design Systems, Component Libraries</p>
           </div>
           <div class="skill-group">
-            <h3>Architecture</h3>
-            <p>Design systems, Component libraries, Performance optimization</p>
+            <h3>Backend & APIs</h3>
+            <p>Node.js, Express, PostgreSQL, REST APIs, Stripe Integration, OAuth</p>
           </div>
           <div class="skill-group">
-            <h3>Testing</h3>
+            <h3>Infrastructure</h3>
+            <p>AWS, Docker, GitHub Actions, CI/CD Pipelines, Domain Configuration, Deployment Automation</p>
+          </div>
+          <div class="skill-group">
+            <h3>Testing & Quality</h3>
             <p>Jest, React Testing Library, Playwright, Cypress</p>
           </div>
           <div class="skill-group">
             <h3>Tools</h3>
-            <p>Git, GitHub Actions, Docker, Figma, CI/CD pipelines</p>
+            <p>Git, Figma, Technical Documentation</p>
           </div>
         </div>
       </div>
@@ -97,9 +103,11 @@
       <div id="work" class="intro__work">
         <h2>How I Work</h2>
         <ul>
-          <li><strong>Build for Scale:</strong> Creating performant UIs with code splitting, lazy loading, and optimized rendering that cut load times by 35%.</li>
-          <li><strong>Design Systems:</strong> Building reusable component libraries that reduce development time by 25% and ensure consistency across products.</li>
-          <li><strong>Quality First:</strong> Implementing testing strategies with Jest and React Testing Library that cut regression bugs by 40%.</li>
+          <li><strong>End-to-End Ownership:</strong> I take projects from Figma mockups to deployed production—frontend, API, database, and infrastructure. No handoffs, no gaps.</li>
+          <li><strong>Build for Scale:</strong> Performant UIs with code splitting, lazy loading, and optimized rendering that cut load times by 35%. Backend services designed for growth.</li>
+          <li><strong>Design Systems:</strong> Reusable component libraries that reduce development time by 25% and ensure consistency across products.</li>
+          <li><strong>Quality First:</strong> Testing strategies with Jest and React Testing Library that cut regression bugs by 40%.</li>
+          <li><strong>Mentorship & Leadership:</strong> As Lead Mentor at Springboard USA, I guided 9 engineers through career transitions—7 secured full-time roles.</li>
         </ul>
       </div>
 
@@ -113,10 +121,9 @@
               <span class="project__icon">+</span>
             </button>
             <div class="project__content">
-              <p class="project__description">A portfolio-first hiring platform for African technical talent. Engineers showcase real work—GitHub repos, CI status, video walkthroughs, and live deployments—while employers find verified skills before interviews.</p>
+              <p class="project__description">Portfolio-first hiring platform for engineers. Full-stack: Next.js, Node.js, PostgreSQL. Designed, built, and validated through user research.</p>
               <a href="https://rigorjobs.com/" target="_blank" rel="noopener noreferrer"
                 class="project__link external-link">Visit site</a>
-              <p class="project__note">Full-stack platform built end-to-end with REST APIs, Node.js/Express backend.</p>
             </div>
           </div>
 
@@ -146,6 +153,16 @@
               <a href="https://mentorship.jasan-foundation.org/" target="_blank" rel="noopener noreferrer"
                 class="project__link external-link">Visit site</a>
               <p class="project__note">Built from idea to live deployment end-to-end for the client.</p>
+            </div>
+          </div>
+
+          <div class="project" aria-expanded="false">
+            <button type="button" class="project__toggle" aria-expanded="false">
+              <span class="project__title">Client Infrastructure Projects</span>
+              <span class="project__icon">+</span>
+            </button>
+            <div class="project__content">
+              <p class="project__description">Domain setup, DNS configuration, email systems, and IT management for small businesses. Helping non-technical founders own their digital infrastructure.</p>
             </div>
           </div>
         </div>
@@ -209,37 +226,114 @@
   <script type="module" src="js/index.js"></script>
   <!-- Fallback for project toggles if module fails -->
   <script>
-    // Inline fallback for maximum compatibility
     (function () {
-      function setupProjectToggles() {
-        var toggles = document.querySelectorAll('.project__toggle');
-        toggles.forEach(function (toggle) {
-          if (toggle.dataset.setup || toggle.dataset.initialized) return;
-          toggle.dataset.setup = 'true';
-          toggle.dataset.initialized = 'true';
+      // Helper for classList (IE10+ support)
+      function hasClass(el, cls) {
+        return el.className && el.className.indexOf(cls) !== -1;
+      }
+      function addClass(el, cls) {
+        if (!hasClass(el, cls)) {
+          el.className = (el.className ? el.className + ' ' : '') + cls;
+        }
+      }
+      function removeClass(el, cls) {
+        if (el.className) {
+          el.className = el.className.replace(new RegExp('(^|\\s)' + cls + '(\\s|$)', 'g'), ' ').trim();
+        }
+      }
+      function toggleClass(el, cls) {
+        if (hasClass(el, cls)) {
+          removeClass(el, cls);
+          return false;
+        } else {
+          addClass(el, cls);
+          return true;
+        }
+      }
 
-          var handler = function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            var project = toggle.closest('.project');
-            if (!project) return;
-            var isExpanded = project.getAttribute('aria-expanded') === 'true';
-            var newState = isExpanded ? 'false' : 'true';
-            project.setAttribute('aria-expanded', newState);
-            toggle.setAttribute('aria-expanded', newState);
-          };
+      // Mobile menu toggle
+      function setupMobileMenu() {
+        var menuBtn = document.querySelector('.frame__menu-btn');
+        var nav = document.querySelector('.frame__nav');
+        var frame = document.querySelector('.frame');
+        if (!menuBtn || !nav || !frame) return;
 
-          toggle.addEventListener('click', handler);
-          toggle.addEventListener('touchend', handler, { passive: false });
+        function closeMenu() {
+          removeClass(frame, 'frame--open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+
+        function openMenu() {
+          addClass(frame, 'frame--open');
+          menuBtn.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function toggleMenu(e) {
+          e.preventDefault();
+          if (hasClass(frame, 'frame--open')) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        var links = nav.querySelectorAll('.frame__link');
+        for (var i = 0; i < links.length; i++) {
+          links[i].addEventListener('click', closeMenu);
+        }
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function (e) {
+          if ((e.key === 'Escape' || e.keyCode === 27) && hasClass(frame, 'frame--open')) {
+            closeMenu();
+            menuBtn.focus();
+          }
         });
       }
 
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', setupProjectToggles);
-      } else {
+      // Project toggles
+      function setupProjectToggles() {
+        var toggles = document.querySelectorAll('.project__toggle');
+        for (var i = 0; i < toggles.length; i++) {
+          (function (toggle) {
+            if (toggle.getAttribute('data-setup')) return;
+            toggle.setAttribute('data-setup', 'true');
+
+            var handler = function (e) {
+              e.preventDefault();
+              e.stopPropagation();
+              var project = toggle.parentElement;
+              while (project && !hasClass(project, 'project')) {
+                project = project.parentElement;
+              }
+              if (!project) return;
+              var isExpanded = project.getAttribute('aria-expanded') === 'true';
+              var newState = isExpanded ? 'false' : 'true';
+              project.setAttribute('aria-expanded', newState);
+              toggle.setAttribute('aria-expanded', newState);
+            };
+
+            toggle.addEventListener('click', handler);
+          })(toggles[i]);
+        }
+      }
+
+      // Initialize
+      function init() {
+        setupMobileMenu();
         setupProjectToggles();
       }
-      setTimeout(setupProjectToggles, 100);
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
     })();
   </script>
 </body>

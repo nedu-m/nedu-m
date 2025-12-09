@@ -116,56 +116,150 @@ main {
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 1rem 1.5rem;
-  background: rgba(252, 252, 252, 0.85);
+  padding: 0.875rem 1.25rem;
+  background: rgba(252, 252, 252, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
-  transition: box-shadow var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  &:hover {
-    box-shadow: var(--shadow-sm);
+// Hamburger menu button (mobile only)
+.frame__menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 101;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.frame__menu-icon {
+  position: relative;
+  width: 20px;
+  height: 2px;
+  background: #1a1a1a;
+  background: var(--color-text);
+  border-radius: 1px;
+  -webkit-transition: background 0.2s ease;
+  -o-transition: background 0.2s ease;
+  transition: background 0.2s ease;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #1a1a1a;
+    background: var(--color-text);
+    border-radius: 1px;
+    -webkit-transition: top 0.2s ease, bottom 0.2s ease, -webkit-transform 0.2s ease;
+    -o-transition: top 0.2s ease, bottom 0.2s ease, transform 0.2s ease;
+    transition: top 0.2s ease, bottom 0.2s ease, transform 0.2s ease;
+  }
+
+  &::before {
+    top: -6px;
+  }
+
+  &::after {
+    bottom: -6px;
   }
 }
 
-.frame__links {
+// Menu open state - X icon
+.frame--open .frame__menu-icon {
+  background: transparent;
+
+  &::before {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    bottom: 0;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+
+// Mobile navigation (default)
+.frame__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  height: 100dvh; // Dynamic viewport height for mobile browsers
+  background-color: #fcfcfc;
+  background-color: var(--color-bg);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  gap: 0.75rem;
-  text-transform: uppercase;
-  font-size: 0.6875rem;
-  letter-spacing: 0.08em;
+  gap: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: opacity 0.2s ease, visibility 0.2s ease;
+  -o-transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 99;
+  // Fallback for browsers without backdrop-filter
+  @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
+    background-color: rgba(252, 252, 252, 0.95);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+}
+
+.frame--open .frame__nav {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.frame__link {
+  padding: 0.875rem 1.5rem;
+  font-size: 1.125rem;
   font-weight: 500;
-  flex-wrap: wrap;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 8px;
+  transition: color var(--transition-base), background-color var(--transition-base);
 
-  a {
-    position: relative;
-    padding: 0.375rem 0.625rem;
-    border-radius: 4px;
-    color: var(--color-text-muted);
-    transition: color var(--transition-base), background-color var(--transition-base);
+  &:hover {
+    color: var(--color-accent);
+    background: var(--color-accent-light);
+  }
 
-    &:hover {
-      color: var(--color-accent);
-      background: var(--color-accent-light);
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%) scaleX(0);
-      width: calc(100% - 1.25rem);
-      height: 2px;
-      background: var(--color-accent);
-      transition: transform var(--transition-slow);
-      border-radius: 1px;
-    }
-
-    &:hover::after {
-      transform: translateX(-50%) scaleX(1);
-    }
+  // Override external link icon size for nav
+  &.external-link::after {
+    width: 0.65em;
+    height: 0.65em;
   }
 }
 
@@ -759,20 +853,11 @@ main {
 // ==========================================
 @media screen and (min-width: 481px) {
   .frame {
-    padding: 1.125rem 2rem;
-  }
-
-  .frame__links {
-    gap: 0.375rem;
-    font-size: 0.75rem;
-
-    a {
-      padding: 0.5rem 0.875rem;
-    }
+    padding: 1rem 2rem;
   }
 
   .intro {
-    padding: 8rem 2rem 4rem;
+    padding: 6rem 2rem 4rem;
   }
 
   .intro__header {
@@ -834,22 +919,66 @@ main {
 // DESKTOP (min-width: 769px)
 // ==========================================
 @media screen and (min-width: 769px) {
+  // Show horizontal nav, hide hamburger
   .frame {
-    padding: 1.25rem 3rem;
+    padding: 1rem 2rem;
+    justify-content: center;
   }
 
-  .frame__links {
-    gap: 0.5rem;
-    font-size: 0.8125rem;
+  .frame__menu-btn {
+    display: none;
+  }
 
-    a {
-      padding: 0.5rem 1rem;
+  .frame__nav {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    gap: 0.25rem;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .frame__link {
+    position: relative;
+    padding: 0.5rem 0.875rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    color: var(--color-text-muted);
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) scaleX(0);
+      width: calc(100% - 1rem);
+      height: 2px;
+      background: var(--color-accent);
+      transition: transform var(--transition-slow);
+      border-radius: 1px;
+    }
+
+    &:hover::before {
+      transform: translateX(-50%) scaleX(1);
+    }
+
+    &.external-link::after {
+      width: 0.6em;
+      height: 0.6em;
     }
   }
 
   .intro {
     max-width: 800px;
-    padding: 9rem 2rem 5rem;
+    padding: 7rem 2rem 5rem;
   }
 
   .intro__header {
@@ -867,7 +996,7 @@ main {
   }
 
   [id] {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 80px;
   }
 }
 
