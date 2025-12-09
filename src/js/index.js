@@ -1,22 +1,63 @@
-// Project expand/collapse functionality - must work independently
+// Mobile menu functionality
+function initMobileMenu() {
+    const menuBtn = document.querySelector('.frame__menu-btn');
+    const nav = document.querySelector('.frame__nav');
+    const frame = document.querySelector('.frame');
+    if (!menuBtn || !nav || !frame) return;
+
+    const closeMenu = () => {
+        frame.classList.remove('frame--open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    };
+
+    const openMenu = () => {
+        frame.classList.add('frame--open');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const toggleMenu = (e) => {
+        e.preventDefault();
+        if (frame.classList.contains('frame--open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    };
+
+    menuBtn.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking a link
+    nav.querySelectorAll('.frame__link').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && frame.classList.contains('frame--open')) {
+            closeMenu();
+            menuBtn.focus();
+        }
+    });
+}
+
+// Project expand/collapse functionality
 function initProjects() {
     const projectToggles = document.querySelectorAll('.project__toggle');
 
     if (projectToggles.length === 0) {
-        // Retry if elements aren't ready yet
         setTimeout(initProjects, 100);
         return;
     }
 
     projectToggles.forEach(toggle => {
-        // Skip if already initialized (check both flags to coordinate with inline script)
         if (toggle.dataset.initialized === 'true' || toggle.dataset.setup === 'true') {
             return;
         }
         toggle.dataset.initialized = 'true';
         toggle.dataset.setup = 'true';
 
-        // Handle both click and touch events for mobile
         const handleToggle = (e) => {
             e.preventDefault();
             e.stopPropagation();
@@ -31,13 +72,9 @@ function initProjects() {
             toggle.setAttribute('aria-expanded', newState);
         };
 
-        // Use passive: false to allow preventDefault
         toggle.addEventListener('click', handleToggle, { passive: false });
         toggle.addEventListener('touchend', handleToggle, { passive: false });
-        // Also handle touchstart to prevent double-firing
-        toggle.addEventListener('touchstart', (e) => {
-            // Just prevent default, don't toggle yet
-        }, { passive: false });
+        toggle.addEventListener('touchstart', () => {}, { passive: false });
     });
 }
 
@@ -59,6 +96,7 @@ function initCursor() {
 
 // Initialize everything
 function init() {
+    initMobileMenu();
     initProjects();
     initCursor();
 }
