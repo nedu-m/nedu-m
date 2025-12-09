@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chukwunedum Davidson - Technical Solutions Engineer</title>
+  <title>Chukwunedum Davidson - Senior Frontend Engineer</title>
 
   <link rel="preconnect" href="https://use.typekit.net" crossorigin />
   <link rel="stylesheet" href="https://use.typekit.net/jdl7wqk.css" />
@@ -43,43 +43,83 @@
         <a class="hover-line" href="#building">Building</a>
         <a class="hover-line" href="#learning">Learning</a>
         <a class="hover-line" href="#podcasts">Podcasts</a>
-        <a class="hover-line" href="https://github.com/nedu-m">GitHub</a>
+        <a class="hover-line external-link" href="https://github.com/nedu-m" target="_blank" rel="noopener noreferrer">GitHub</a>
 
       </nav>
     </div>
     <div class="intro">
       <div class="intro__header">
         <h1 class="intro__name">Chukwunedum Davidson</h1>
-        <p class="intro__title">Problem-Driven Product Builder</p>
+        <p class="intro__title">Senior Frontend Engineer</p>
       </div>
 
       <div class="intro__core">
-        <p>I build end-to-end software products that solve overlooked real-world problems. My process is simple: find a
-          bottleneck, design a system around it, ship the solution, and analyze the results.</p>
+        <p>5+ years building high-performance, user-centric interfaces. I ship production-ready React applications that scale—from enterprise SaaS platforms to products serving thousands of users.</p>
       </div>
 
-      <div id="solve" class="intro__solve">
-        <h2>What I Solve</h2>
-        <p>I find real-world inefficiencies and build production-ready systems that fix them. Specifically, I focus on
-          credibility and trust gaps, research and synthesis bottlenecks, and operational inefficiencies in niche
-          domains.</p>
+      <div class="intro__stats">
+        <div class="stat">
+          <span class="stat__number">5+</span>
+          <span class="stat__label">Years Experience</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">3,000+</span>
+          <span class="stat__label">Monthly Active Users</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">9</span>
+          <span class="stat__label">Developers Mentored</span>
+        </div>
+      </div>
+
+      <div id="solve" class="intro__skills">
+        <h2>Core Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <p>React, Next.js, TypeScript, TailwindCSS, Accessibility (WCAG)</p>
+          </div>
+          <div class="skill-group">
+            <h3>Architecture</h3>
+            <p>Design systems, Component libraries, Performance optimization</p>
+          </div>
+          <div class="skill-group">
+            <h3>Testing</h3>
+            <p>Jest, React Testing Library, Playwright, Cypress</p>
+          </div>
+          <div class="skill-group">
+            <h3>Tools</h3>
+            <p>Git, GitHub Actions, Docker, Figma, CI/CD pipelines</p>
+          </div>
+        </div>
       </div>
 
       <div id="work" class="intro__work">
         <h2>How I Work</h2>
         <ul>
-          <li><strong>Problem Discovery:</strong> Spotting inefficiencies, understanding market dynamics, and
-            identifying blind spots in existing solutions.</li>
-          <li><strong>System Architecture & Building:</strong> Designing flows, selecting the right stack, managing
-            tradeoffs, and transitioning from prototype to production.</li>
-          <li><strong>Result Synthesis:</strong> Analyzing what worked, understanding customer behavior, and deriving
-            business insights for the next iteration.</li>
+          <li><strong>Build for Scale:</strong> Creating performant UIs with code splitting, lazy loading, and optimized rendering that cut load times by 35%.</li>
+          <li><strong>Design Systems:</strong> Building reusable component libraries that reduce development time by 25% and ensure consistency across products.</li>
+          <li><strong>Quality First:</strong> Implementing testing strategies with Jest and React Testing Library that cut regression bugs by 40%.</li>
         </ul>
       </div>
 
       <div id="built" class="intro__projects">
         <h2>Things I've Built</h2>
         <div class="projects">
+          <div class="project project--featured" aria-expanded="false">
+            <button type="button" class="project__toggle" aria-expanded="false">
+              <span class="project__title">RigorJobs</span>
+              <span class="project__badge">Featured</span>
+              <span class="project__icon">+</span>
+            </button>
+            <div class="project__content">
+              <p class="project__description">A portfolio-first hiring platform for African technical talent. Engineers showcase real work—GitHub repos, CI status, video walkthroughs, and live deployments—while employers find verified skills before interviews.</p>
+              <a href="https://rigorjobs.com/" target="_blank" rel="noopener noreferrer"
+                class="project__link external-link">Visit site</a>
+              <p class="project__note">Full-stack platform built end-to-end with REST APIs, Node.js/Express backend.</p>
+            </div>
+          </div>
+
           <div class="project" aria-expanded="false">
             <button type="button" class="project__toggle" aria-expanded="false">
               <span class="project__title">TechPolicyAdvisory</span>
@@ -89,7 +129,7 @@
               <p class="project__description">A digital intelligence platform providing analysis and insights on
                 Africa's digital policy landscape and regulatory environment.</p>
               <a href="https://techpolicyadvisory.com/" target="_blank" rel="noopener noreferrer"
-                class="project__link">Visit site →</a>
+                class="project__link external-link">Visit site</a>
               <p class="project__note">Built from idea to live deployment end-to-end for the client.</p>
             </div>
           </div>
@@ -104,7 +144,7 @@
                 selection process, matches mentors with mentees based on practice areas and goals, and provides a
                 centralized dashboard for tracking progress, sessions, and certifications.</p>
               <a href="https://mentorship.jasan-foundation.org/" target="_blank" rel="noopener noreferrer"
-                class="project__link">Visit site →</a>
+                class="project__link external-link">Visit site</a>
               <p class="project__note">Built from idea to live deployment end-to-end for the client.</p>
             </div>
           </div>
@@ -124,20 +164,7 @@
                 comprehensive company research, technical analysis, and meeting preparation in seconds instead of hours.
               </p>
               <a href="https://github.com/nedu-m/prepcall" target="_blank" rel="noopener noreferrer"
-                class="project__link">View on GitHub →</a>
-              <p class="project__note">Currently in active development.</p>
-            </div>
-          </div>
-
-          <div class="project project--building" aria-expanded="false">
-            <button type="button" class="project__toggle" aria-expanded="false">
-              <span class="project__title">RigorJobs</span>
-              <span class="project__icon">+</span>
-            </button>
-            <div class="project__content">
-              <p class="project__description">A portfolio-first job board for African technical talent, connecting
-                skilled developers with employers through verified portfolios. Employers can see real evidence of skills
-                through GitHub repositories, CI status, video walkthroughs, and live deployments before interviews.</p>
+                class="project__link external-link">View on GitHub</a>
               <p class="project__note">Currently in active development.</p>
             </div>
           </div>
@@ -147,19 +174,18 @@
       <div id="learning" class="intro__learning">
         <h2>What I'm Learning</h2>
         <ul class="learning__list">
-          <li>Lean Startup <em>by Eric Ries</em></li>
-          <li>The Mom Test <em>by Rob Fitzpatrick</em></li>
-          <li>The Hard Thing About Hard Things <em>by Ben Horowitz</em></li>
-          <li>12 Rules for Life <em>by Jordan B. Peterson</em></li>
+          <li><a href="https://theleanstartup.com/" target="_blank" rel="noopener noreferrer" class="external-link">The Lean Startup</a> <em>by Eric Ries</em></li>
+          <li><a href="https://www.momtestbook.com/" target="_blank" rel="noopener noreferrer" class="external-link">The Mom Test</a> <em>by Rob Fitzpatrick</em></li>
+          <li><a href="https://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205" target="_blank" rel="noopener noreferrer" class="external-link">The Hard Thing About Hard Things</a> <em>by Ben Horowitz</em></li>
+          <li><a href="https://www.jordanbpeterson.com/12-rules-for-life/" target="_blank" rel="noopener noreferrer" class="external-link">12 Rules for Life</a> <em>by Jordan B. Peterson</em></li>
         </ul>
       </div>
 
       <div id="podcasts" class="intro__podcasts">
         <h2>Podcasts</h2>
         <ul class="learning__list">
-          <li><a href="https://nav.al/" target="_blank" rel="noopener noreferrer">Naval Podcast</a></li>
-          <li><a href="https://open.spotify.com/show/0wjYlCNxLDgFUUjZMaP6Dx" target="_blank" rel="noopener noreferrer">A
-              Bit of Optimism</a></li>
+          <li><a href="https://nav.al/" target="_blank" rel="noopener noreferrer" class="external-link">Naval Podcast</a></li>
+          <li><a href="https://open.spotify.com/show/0wjYlCNxLDgFUUjZMaP6Dx" target="_blank" rel="noopener noreferrer" class="external-link">A Bit of Optimism</a></li>
         </ul>
       </div>
     </div>
