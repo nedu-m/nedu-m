@@ -22,7 +22,7 @@ I ship software that scales, mentor engineers who land jobs, and help businesses
 
 - **Portfolio**: [View my work](https://nedu-m.github.io/nedu-m/)
 - **Email**: edu.davidson@proton.me
-- **Status**: Currently seeking remote software engineering roles
+- **Status**: Available for hire — open to remote opportunities
 
 ---
 
