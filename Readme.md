@@ -20,7 +20,7 @@ I ship software that scales, mentor engineers who land jobs, and help businesses
 
 ## Where to Find Me
 
-- **Portfolio**: [View my work](https://nedu-m.github.io/nedu-m/)
+- **Portfolio**: [View my work](https://nedu-m.vercel.app/)
 - **Email**: edu.davidson@proton.me
 - **Status**: Available for hire — open to remote opportunities
 
