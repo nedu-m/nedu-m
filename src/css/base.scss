@@ -362,6 +362,19 @@ main {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg), 0 12px 32px rgba(220, 38, 38, 0.2);
   }
+
+  // Shimmer effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer-slide 3s ease-in-out infinite;
+  }
+
 }
 
 @keyframes shimmer-slide {
@@ -424,12 +437,37 @@ main {
   border-radius: 100px;
   transition: all var(--transition-base);
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+
+  // Ripple effect on hover
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(220, 38, 38, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease-out, height 0.6s ease-out;
+  }
 
   &:hover {
     background: white;
     color: var(--color-accent);
-    transform: scale(1.05);
+    transform: scale(1.05) translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+    &::before {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  &:active {
+    transform: scale(1.02) translateY(0);
   }
 
   &:focus-visible {
@@ -539,6 +577,7 @@ main {
   &:hover {
     border-color: var(--color-border-hover);
     box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
   }
 
   h3 {
@@ -581,6 +620,7 @@ main {
 
 .intro__solve,
 .intro__work,
+.intro__enterprise,
 .intro__projects,
 .intro__building,
 .intro__learning,
@@ -616,38 +656,174 @@ main {
   max-width: 60ch;
 }
 
-// How I Work section
-.intro__work ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+// Enterprise section
+.intro__enterprise {
+  p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.7;
+    margin: 0 0 1.5rem;
+    color: var(--color-text);
+    max-width: 60ch;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  li {
+    font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+    line-height: 1.7;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--color-text);
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.625rem;
+      width: 8px;
+      height: 8px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      transition: transform var(--transition-base);
+    }
+
+    &:hover::before {
+      transform: scale(1.2);
+    }
+
+    strong {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+  }
 }
 
-.intro__work li {
-  font-size: clamp(0.9375rem, 2vw, 1.125rem);
-  line-height: 1.7;
-  padding-left: 2rem;
+// How I Work section
+.work-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  contain: layout;
+}
+
+.work-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  contain: layout style;
+
+  &:hover {
+    border-color: var(--color-border-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  &[aria-expanded="true"] {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-lg), 0 0 0 1px var(--color-accent-light);
+  }
+}
+
+.work-card__toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: clamp(0.9375rem, 2vw, 1.125rem);
   color: var(--color-text);
+  transition: background-color var(--transition-base);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.625rem;
-    width: 10px;
-    height: 2px;
-    background: var(--color-accent);
-    border-radius: 1px;
+  &:hover {
+    background-color: var(--color-accent-light);
   }
 
-  strong {
-    color: var(--color-text);
-    font-weight: 600;
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: -2px;
+    border-radius: 8px;
   }
+}
+
+.work-card__title {
+  font-weight: 600;
+  flex: 1;
+  word-break: break-word;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.work-card__icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--color-accent);
+  transition: transform var(--transition-slow);
+  line-height: 1;
+  margin-left: 1rem;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+}
+
+.work-card[aria-expanded="true"] .work-card__icon {
+  transform: rotate(45deg);
+  background: var(--color-accent);
+  color: white;
+}
+
+.work-card__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.3s ease;
+  padding: 0 1.5rem;
+  border-top: 0 solid var(--color-border);
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.work-card[aria-expanded="true"] .work-card__content {
+  max-height: 500px;
+  padding: 1rem 1.5rem 1.5rem;
+  border-top-width: 1px;
+  display: block;
+  overflow: visible;
+}
+
+.work-card__content p {
+  font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+  line-height: 1.7;
+  margin: 0;
+  color: var(--color-text);
+  display: block;
 }
 
 // ==========================================
@@ -668,11 +844,29 @@ main {
     border-color var(--transition-base),
     box-shadow var(--transition-base),
     transform var(--transition-base);
+  position: relative;
+
+  // Subtle background decoration
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.03), transparent);
+    transition: left 0.5s ease-out;
+    pointer-events: none;
+  }
 
   &:hover {
     border-color: var(--color-border-hover);
     box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+
+    &::after {
+      left: 100%;
+    }
   }
 
   &[aria-expanded="true"] {
@@ -1121,33 +1315,10 @@ main {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .intro__work ul {
+  .work-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  .intro__work li {
-    padding: 1.25rem;
-    padding-left: 1.25rem;
-    background: var(--color-bg-elevated);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    transition:
-      border-color var(--transition-base),
-      box-shadow var(--transition-base),
-      transform var(--transition-base);
-
-    &::before {
-      left: 1.25rem;
-      top: 1.5rem;
-    }
-
-    &:hover {
-      border-color: var(--color-border-hover);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-4px);
-    }
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 }
 

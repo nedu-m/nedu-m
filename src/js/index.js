@@ -78,6 +78,55 @@ function initProjects() {
     });
 }
 
+// Work card expand/collapse functionality
+function initWorkCards() {
+    const workCards = document.querySelectorAll('.work-card');
+
+    if (workCards.length === 0) {
+        setTimeout(initWorkCards, 100);
+        return;
+    }
+
+    workCards.forEach((workCard, index) => {
+        if (workCard.dataset.initialized === 'true') {
+            return;
+        }
+        workCard.dataset.initialized = 'true';
+        
+        // Find toggle and content within THIS card only
+        const toggle = workCard.querySelector('.work-card__toggle');
+        const content = workCard.querySelector('.work-card__content');
+        
+        if (!toggle || !content) {
+            return;
+        }
+
+        // Store reference to this specific card in closure
+        const handleToggle = (function(card, cardToggle, cardContent) {
+            return function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Verify we're working with the correct card
+                const clickedCard = e.currentTarget.closest('.work-card');
+                if (clickedCard !== card) {
+                    return;
+                }
+
+                const isExpanded = card.getAttribute('aria-expanded') === 'true';
+                const newState = !isExpanded ? 'true' : 'false';
+
+                // Only update THIS specific card
+                card.setAttribute('aria-expanded', newState);
+                cardToggle.setAttribute('aria-expanded', newState);
+            };
+        })(workCard, toggle, content);
+
+        toggle.addEventListener('click', handleToggle, { passive: false });
+        toggle.addEventListener('touchend', handleToggle, { passive: false });
+    });
+}
+
 // Initialize custom cursor (optional, don't block if it fails)
 function initCursor() {
     try {
@@ -98,6 +147,7 @@ function initCursor() {
 function init() {
     initMobileMenu();
     initProjects();
+    initWorkCards();
     initCursor();
 }
 
