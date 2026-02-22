@@ -41,9 +41,11 @@
 
   <!-- Pixel pet -->
   <div class="pet" aria-hidden="true" id="pixelPet">
+    <div class="pet__emote" id="petEmote"></div>
     <div class="pet__body">
       <div class="pet__eye pet__eye--l"></div>
       <div class="pet__eye pet__eye--r"></div>
+      <div class="pet__mouth" id="petMouth"></div>
     </div>
     <div class="pet__legs">
       <div class="pet__leg"></div>
@@ -58,17 +60,17 @@
       <button class="frame__menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false">
         <span class="frame__menu-icon"></span>
       </button>
-      <nav class="frame__nav">
-        <a class="frame__link" href="#solve">Skills</a>
-        <a class="frame__link" href="#work">Process</a>
-        <a class="frame__link" href="#enterprise">Enterprise</a>
-        <a class="frame__link" href="#built">Work</a>
-        <a class="frame__link" href="#building">Current</a>
-        <a class="frame__link" href="#learning">Reading</a>
-        <a class="frame__link" href="#podcasts">Podcasts</a>
-        <a class="frame__link frame__link--ext" href="https://github.com/nedu-m" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </nav>
     </header>
+    <nav class="frame__nav">
+      <a class="frame__link" href="#solve">Skills</a>
+      <a class="frame__link" href="#work">Process</a>
+      <a class="frame__link" href="#enterprise">Enterprise</a>
+      <a class="frame__link" href="#built">Work</a>
+      <a class="frame__link" href="#building">Current</a>
+      <a class="frame__link" href="#learning">Reading</a>
+      <a class="frame__link" href="#podcasts">Podcasts</a>
+      <a class="frame__link frame__link--ext" href="https://github.com/nedu-m" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
 
     <div class="intro">
       <section class="hero reveal">
@@ -351,7 +353,7 @@
       </div>
     </div>
     <div class="colophon">
-      <p>built with parcel &#xB7; scss &#xB7; vanilla js &#xB7; too much coffee</p>
+      <p>built with parcel &#xB7; scss &#xB7; vanilla js</p>
       <p>set in kudryashev + acumin pro</p>
     </div>
   </footer>

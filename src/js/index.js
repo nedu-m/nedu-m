@@ -233,35 +233,142 @@ function initStatusLine() {
     el.style.display = 'inline-block';
 }
 
-// Pixel pet wandering
+// Pixel pet with full personality
 function initPixelPet() {
     const pet = document.getElementById('pixelPet');
     if (!pet) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+    const emoteEl = document.getElementById('petEmote');
     let posX = window.innerWidth - 64;
-    let direction = -1; // -1 = left, 1 = right
+    let direction = -1;
     let paused = false;
+    let sleeping = false;
+    let idleTimer = null;
     let wanderTimeout = null;
+    let currentMood = '';
 
     pet.style.right = 'auto';
     pet.style.left = posX + 'px';
 
+    // --- Emote bubble ---
+    function showEmote(text, duration) {
+        if (!emoteEl) return;
+        emoteEl.textContent = text;
+        emoteEl.classList.add('is-visible');
+        setTimeout(() => emoteEl.classList.remove('is-visible'), duration || 2000);
+    }
+
+    // --- Sleep mode ---
+    function resetIdleTimer() {
+        clearTimeout(idleTimer);
+        if (sleeping) wake();
+        idleTimer = setTimeout(sleep, 15000);
+    }
+
+    function sleep() {
+        if (sleeping) return;
+        sleeping = true;
+        paused = true;
+        pet.classList.add('pet--sleeping');
+        showEmote('zzZ', 3000);
+    }
+
+    function wake() {
+        sleeping = false;
+        paused = false;
+        pet.classList.remove('pet--sleeping');
+        showEmote('!', 1000);
+    }
+
+    window.addEventListener('scroll', resetIdleTimer, { passive: true });
+    window.addEventListener('mousemove', resetIdleTimer, { passive: true });
+    window.addEventListener('touchstart', resetIdleTimer, { passive: true });
+    resetIdleTimer();
+
+    // --- Click reactions ---
+    pet.addEventListener('click', () => {
+        resetIdleTimer();
+
+        // Remove any existing trick classes
+        pet.classList.remove('pet--jump', 'pet--spin');
+
+        // Pick a random reaction
+        const roll = Math.random();
+        if (roll < 0.5) {
+            // Jump
+            void pet.offsetWidth; // force reflow
+            pet.classList.add('pet--jump');
+            showEmote(':D', 1500);
+            setTimeout(() => pet.classList.remove('pet--jump'), 500);
+        } else if (roll < 0.8) {
+            // Spin
+            void pet.offsetWidth;
+            pet.classList.add('pet--spin');
+            showEmote('~', 1200);
+            setTimeout(() => pet.classList.remove('pet--spin'), 600);
+        } else {
+            // Random emote
+            const emotes = ['o/', '*_*', '^_^', '> <', ':3', '!!'];
+            showEmote(emotes[Math.floor(Math.random() * emotes.length)], 1800);
+            void pet.offsetWidth;
+            pet.classList.add('pet--jump');
+            setTimeout(() => pet.classList.remove('pet--jump'), 500);
+        }
+    });
+
+    // --- Section-aware moods ---
+    function setMood(mood) {
+        if (mood === currentMood) return;
+        pet.classList.remove('pet--happy', 'pet--excited', 'pet--sleepy');
+        currentMood = mood;
+        if (mood) pet.classList.add('pet--' + mood);
+    }
+
+    const sectionMoods = {
+        'built': 'happy',
+        'building': 'excited',
+        'work': 'excited',
+        'solve': 'happy',
+        'enterprise': 'happy',
+        'learning': 'sleepy',
+        'podcasts': 'sleepy',
+    };
+
+    const sections = document.querySelectorAll('[id]');
+    const moodObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const mood = sectionMoods[entry.target.id] || '';
+                setMood(mood);
+
+                // Occasional emote when entering a section
+                if (mood === 'excited' && Math.random() < 0.5) {
+                    showEmote('!', 1500);
+                } else if (mood === 'sleepy' && Math.random() < 0.4) {
+                    showEmote('~_~', 1500);
+                }
+            }
+        });
+    }, { threshold: 0.3 });
+
+    sections.forEach(s => {
+        if (sectionMoods[s.id]) moodObserver.observe(s);
+    });
+
+    // --- Wandering ---
     function wander() {
-        if (paused) {
+        if (paused || sleeping) {
             wanderTimeout = setTimeout(wander, 2000 + Math.random() * 3000);
             return;
         }
 
-        // Pick random distance (40-120px)
         const distance = 40 + Math.random() * 80;
 
-        // Maybe flip direction
         if (Math.random() < 0.4) {
             direction *= -1;
         }
 
-        // Keep within bounds
         const newX = posX + (distance * direction);
         if (newX < 20) {
             direction = 1;
@@ -273,27 +380,27 @@ function initPixelPet() {
             posX = newX;
         }
 
-        // Flip sprite based on direction
-        pet.querySelector('.pet__body').style.transform =
-            direction === 1 ? 'scaleX(-1)' : 'scaleX(1)';
+        // Flip sprite (but not when sleeping since body transform is overridden)
+        if (!sleeping) {
+            const body = pet.querySelector('.pet__body');
+            if (body && !pet.classList.contains('pet--sleeping')) {
+                body.style.transform = direction === 1 ? 'scaleX(-1)' : 'scaleX(1)';
+            }
+        }
 
-        // Animate to new position
         pet.style.transition = 'left 2s ease-in-out';
         pet.style.left = posX + 'px';
 
-        // Randomly pause sometimes (idle)
         if (Math.random() < 0.3) {
             paused = true;
-            setTimeout(() => { paused = false; }, 3000 + Math.random() * 4000);
+            setTimeout(() => { if (!sleeping) paused = false; }, 3000 + Math.random() * 4000);
         }
 
         wanderTimeout = setTimeout(wander, 2500 + Math.random() * 3000);
     }
 
-    // Start wandering after a short delay
     setTimeout(wander, 2000);
 
-    // Update bounds on resize
     window.addEventListener('resize', () => {
         if (posX > window.innerWidth - 64) {
             posX = window.innerWidth - 64;
