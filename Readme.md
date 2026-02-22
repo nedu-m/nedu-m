@@ -1,20 +1,18 @@
 # Hi, I'm Chukwunedum Davidson
 
-**Senior Software Engineer** building production systems end-to-end—from high-performance React interfaces to Node.js APIs and cloud infrastructure.
+**Product Engineer** who takes ideas from architecture to production. 5+ years shipping React, Next.js, TypeScript, Python, and FastAPI systems across SaaS, presales intelligence, and AI tooling. I don't hand off—I architect, build, deploy, and iterate.
 
 ## What I Do
 
-I ship software that scales, mentor engineers who land jobs, and help businesses figure out what to build.
-
-- **Full-Stack Development**: React, Next.js, TypeScript, Node.js, PostgreSQL
-- **Infrastructure & DevOps**: AWS, Docker, CI/CD pipelines, deployment automation
-- **Design Systems**: Building reusable component libraries that reduce development time by 25%
-- **Performance Optimization**: Cutting load times by 35% through code splitting and optimized rendering
-- **Mentorship**: 78% placement rate helping engineers transition into tech roles
+- **Frontend**: React, Next.js, TypeScript, TailwindCSS, Design Systems
+- **Backend & APIs**: Python, FastAPI, Node.js, Express, C#/.NET, PostgreSQL
+- **Infrastructure**: Linux, Bash, AWS, Docker, GitHub Actions, CI/CD Pipelines
+- **Testing**: Jest, React Testing Library, Playwright, Cypress
+- **Mentorship**: Led 9 engineers through career transitions at Springboard USA — 7 secured full-time roles
 
 ## Currently Building
 
-**[RigorJobs](https://rigorjobs.com/)** - Portfolio-first hiring platform for engineers. Full-stack Next.js application with Node.js backend and PostgreSQL.
+**[BetSignal](https://betsignal.live/welcome)** - Football value-betting platform with a self-calibrating Poisson model. Three-service architecture: FastAPI engine, web API, and Telegram bot.
 
 **[PrepCall](https://github.com/nedu-m/prepcall)** - AI-powered intelligence brief generation for presales meetings. Comprehensive company research and technical analysis in seconds.
 
@@ -23,7 +21,3 @@ I ship software that scales, mentor engineers who land jobs, and help businesses
 - **Portfolio**: [View my work](https://nedu-m.vercel.app/)
 - **Email**: edu.davidson@proton.me
 - **Status**: Available for hire — open to remote opportunities
-
----
-
-*Building at the intersection of technology and business.*

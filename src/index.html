@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chukwunedum Davidson - Senior Software Engineer</title>
+  <title>Chukwunedum Davidson - Product Engineer</title>
+  <meta name="description" content="Product engineer who takes ideas from architecture to production. React, Next.js, Python, FastAPI — shipped products, not prototypes." />
+  <meta name="theme-color" content="#0a0a0b" />
 
   <link rel="preconnect" href="https://use.typekit.net" crossorigin />
   <link rel="stylesheet" href="https://use.typekit.net/jdl7wqk.css" />
@@ -34,34 +36,68 @@
 </head>
 
 <body>
+  <!-- Grain texture overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Pixel pet -->
+  <div class="pet" aria-hidden="true" id="pixelPet">
+    <div class="pet__body">
+      <div class="pet__eye pet__eye--l"></div>
+      <div class="pet__eye pet__eye--r"></div>
+    </div>
+    <div class="pet__legs">
+      <div class="pet__leg"></div>
+      <div class="pet__leg"></div>
+    </div>
+    <div class="pet__shadow"></div>
+  </div>
+
   <main>
     <header class="frame">
+      <a class="frame__logo" href="#">CD</a>
       <button class="frame__menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false">
         <span class="frame__menu-icon"></span>
       </button>
       <nav class="frame__nav">
         <a class="frame__link" href="#solve">Skills</a>
-        <a class="frame__link" href="#work">How I Work</a>
-        <a class="frame__link" href="#enterprise">Enterprise-Ready</a>
-        <a class="frame__link" href="#built">Built</a>
-        <a class="frame__link" href="#building">Building</a>
-        <a class="frame__link" href="#learning">Learning</a>
+        <a class="frame__link" href="#work">Process</a>
+        <a class="frame__link" href="#enterprise">Enterprise</a>
+        <a class="frame__link" href="#built">Work</a>
+        <a class="frame__link" href="#building">Current</a>
+        <a class="frame__link" href="#learning">Reading</a>
         <a class="frame__link" href="#podcasts">Podcasts</a>
-        <a class="frame__link external-link" href="https://github.com/nedu-m" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="frame__link frame__link--ext" href="https://github.com/nedu-m" target="_blank" rel="noopener noreferrer">GitHub</a>
       </nav>
     </header>
+
     <div class="intro">
-      <div class="intro__header">
-        <h1 class="intro__name">Chukwunedum Davidson</h1>
-        <p class="intro__title">Senior Software Engineer</p>
-      </div>
+      <section class="hero reveal">
+        <div class="hero__label">
+          <span class="hero__dot"></span>
+          <span>Product Engineer</span>
+        </div>
+        <h1 class="hero__name">
+          <span class="hero__name-line">Chukwunedum</span>
+          <span class="hero__name-line hero__name-line--indent">Davidson</span>
+        </h1>
+        <p class="hero__bio">Product engineer who takes ideas from architecture to production. 5+ years shipping React, Next.js, TypeScript, Python, and FastAPI systems across SaaS, presales intelligence, and AI tooling. I don't hand off—I architect, build, deploy, and iterate.</p>
+        <div class="hero__meta">
+          <span class="hero__location">Lagos, Nigeria</span>
+          <span class="hero__sep">/</span>
+          <span class="hero__time" id="localTime"></span>
+        </div>
+        <div class="hero__status">
+          <span class="hero__caret">&gt;</span>
+          <span class="hero__status-text" id="statusLine"></span>
+        </div>
+      </section>
 
-      <div class="intro__core">
-        <p>5+ years building production systems end-to-end—from React/Next.js frontends to Node.js and C#/.NET APIs, PostgreSQL databases, and AWS infrastructure. I ship enterprise-grade software with audit trails, role-based access, and reliable data flows.</p>
-      </div>
-
-      <div id="solve" class="intro__skills">
-        <h2>Core Skills</h2>
+      <section id="solve" class="section reveal">
+        <div class="section__header" aria-label="Core Skills">
+          <span class="section__box-top">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;</span>
+          <h2 class="section__title-boxed"><span class="section__label">01</span> &#xB7; core skills</h2>
+          <span class="section__box-bot">&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;</span>
+        </div>
         <div class="skills-grid">
           <div class="skill-group">
             <h3>Frontend</h3>
@@ -69,11 +105,11 @@
           </div>
           <div class="skill-group">
             <h3>Backend & APIs</h3>
-            <p>Node.js, Express, C#/.NET, ASP.NET Core, PostgreSQL, REST APIs, Stripe Integration, OAuth</p>
+            <p>Python, FastAPI, Node.js, Express, C#/.NET, ASP.NET Core, PostgreSQL, REST APIs, Stripe, OAuth</p>
           </div>
           <div class="skill-group">
             <h3>Infrastructure</h3>
-            <p>AWS, Docker, GitHub Actions, CI/CD Pipelines, Domain Configuration, Deployment Automation</p>
+            <p>Linux, Bash, AWS, Docker, GitHub Actions, CI/CD Pipelines, Deployment Automation</p>
           </div>
           <div class="skill-group">
             <h3>Testing & Quality</h3>
@@ -84,10 +120,14 @@
             <p>Git, Figma, Technical Documentation</p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div id="work" class="intro__work">
-        <h2>How I Work</h2>
+      <section id="work" class="section reveal">
+        <div class="section__header" aria-label="How I Work">
+          <span class="section__box-top">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;</span>
+          <h2 class="section__title-boxed"><span class="section__label">02</span> &#xB7; how I work</h2>
+          <span class="section__box-bot">&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;</span>
+        </div>
         <div class="work-cards">
           <div class="work-card" aria-expanded="false" data-card-index="0">
             <button type="button" class="work-card__toggle" aria-expanded="false" data-card-index="0">
@@ -115,7 +155,7 @@
               <span class="work-card__icon">+</span>
             </button>
             <div class="work-card__content" data-card-index="2">
-              <p>I build systems with audit trails, role-based access control, and data integrity—critical for banks and fintech. Every sensitive action is logged, permissions are enforced at the API layer, and data flows are traceable.</p>
+              <p>Permissions enforced at the API layer, every sensitive action logged, data flows traceable. I've built these patterns for fintech clients where a missed audit entry means a compliance finding.</p>
             </div>
           </div>
 
@@ -125,7 +165,7 @@
               <span class="work-card__icon">+</span>
             </button>
             <div class="work-card__content" data-card-index="3">
-              <p>I design APIs with clean layering (Controllers → Services → Repositories), dependency injection, and clear separation of concerns. Whether it's Node.js or C#/.NET, I structure code for maintainability and team collaboration.</p>
+              <p>Clean layering (Controllers → Services → Repositories), dependency injection, and separation of concerns—so the next engineer can onboard in days, not weeks.</p>
             </div>
           </div>
 
@@ -155,7 +195,7 @@
               <span class="work-card__icon">+</span>
             </button>
             <div class="work-card__content" data-card-index="6">
-              <p>I ship systems with error handling, logging, monitoring, and automated testing. When something breaks, we know immediately—not from user complaints.</p>
+              <p>Structured logging, health checks, and alerting baked in from day one. When something breaks at 2 AM, the on-call gets a Slack ping—not a user complaint.</p>
             </div>
           </div>
 
@@ -169,32 +209,40 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div id="enterprise" class="intro__enterprise">
-        <h2>Why Enterprise-Ready</h2>
-        <p>I build systems with audit trails, role-based access, and reliable data flows—exactly what banks and fintech companies need. Every production system I ship includes:</p>
-        <ul>
-          <li><strong>Security & Compliance:</strong> Role-based access control (RBAC), audit logging, data encryption at rest and in transit, GDPR-compliant data handling</li>
-          <li><strong>Reliability:</strong> Comprehensive error handling, transaction management, database migrations with rollback capabilities, monitoring and alerting</li>
-          <li><strong>Scalability:</strong> Architecture designed for horizontal scaling, efficient database queries, caching strategies, API rate limiting</li>
-          <li><strong>Maintainability:</strong> Clean code architecture, comprehensive testing coverage, detailed documentation, CI/CD pipelines for safe deployments</li>
+      <section id="enterprise" class="section reveal">
+        <div class="section__header" aria-label="Why Enterprise-Ready">
+          <span class="section__box-top">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;</span>
+          <h2 class="section__title-boxed"><span class="section__label">03</span> &#xB7; enterprise-ready</h2>
+          <span class="section__box-bot">&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;</span>
+        </div>
+        <p class="section__intro">The difference between a demo and a production system is everything that happens when things go wrong. My systems are built for the second case:</p>
+        <ul class="enterprise-list">
+          <li><strong>Auditable:</strong> RBAC, encrypted data at rest and in transit, GDPR-compliant handling—the checklist your compliance team will actually ask for</li>
+          <li><strong>Recoverable:</strong> Database migrations with rollback, transaction management, and automated backups so a bad deploy doesn't become a bad week</li>
+          <li><strong>Observable:</strong> Dashboards, alerts, and structured logs that answer "what happened?" before anyone has to ask</li>
+          <li><strong>Handoff-Ready:</strong> CI/CD pipelines, documented APIs, and test coverage so the team after me can ship confidently on day one</li>
         </ul>
-      </div>
+      </section>
 
-      <div id="built" class="intro__projects">
-        <h2>Things I've Built</h2>
+      <section id="built" class="section reveal">
+        <div class="section__header" aria-label="Things I've Built">
+          <span class="section__box-top">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;</span>
+          <h2 class="section__title-boxed"><span class="section__label">04</span> &#xB7; things i've built</h2>
+          <span class="section__box-bot">&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;</span>
+        </div>
         <div class="projects">
           <div class="project project--featured" aria-expanded="false">
             <button type="button" class="project__toggle" aria-expanded="false">
-              <span class="project__title">RigorJobs</span>
+              <span class="project__title">BetSignal</span>
               <span class="project__badge">Featured</span>
               <span class="project__icon">+</span>
             </button>
             <div class="project__content">
-              <p class="project__description">Portfolio-first hiring platform for engineers that flips traditional hiring by showcasing verified code portfolios instead of resumes. Full-stack: Next.js, Node.js, PostgreSQL. Metrics: 500+ engineers onboarded, 40% faster hiring cycles, 1,200+ verified GitHub repositories. The platform emphasizes the "portfolio-first" approach—hiring managers evaluate actual code quality and project impact rather than resume keywords.</p>
-              <a href="https://rigorjobs.com/" target="_blank" rel="noopener noreferrer"
-                class="project__link external-link">Visit site</a>
+              <p class="project__description">A football value-betting platform with a self-calibrating Poisson model that finds edge vs bookmaker odds and learns from resolved predictions. Three-service architecture: prediction engine (FastAPI + SQLite), web API (auth + proxy), and Telegram bot—all sharing a single brain. Covers 10 leagues, 800+ team name mappings, and auto-resolves picks on a cron schedule. Built end-to-end: React webapp, Astro marketing site, Python engine, Docker deployment.</p>
+              <a href="https://betsignal.live/welcome" target="_blank" rel="noopener noreferrer"
+                class="project__link">Visit site <span class="arrow">&rarr;</span></a>
             </div>
           </div>
 
@@ -204,11 +252,10 @@
               <span class="project__icon">+</span>
             </button>
             <div class="project__content">
-              <p class="project__description">A digital intelligence platform providing analysis and insights on
-                Africa's digital policy landscape and regulatory environment. Impact: 2,500+ monthly active users, 150+ policy analyses published, 60% reduction in research time for policy professionals. Built from idea to live deployment end-to-end for the client.</p>
+              <p class="project__description">Digital intelligence platform for Africa's policy landscape—research, analysis, and regulatory tracking. 2,500+ monthly active users, 150+ policy analyses published, 60% reduction in research time for policy professionals.</p>
               <a href="https://techpolicyadvisory.com/" target="_blank" rel="noopener noreferrer"
-                class="project__link external-link">Visit site</a>
-              <p class="project__note">Built from idea to live deployment end-to-end for the client.</p>
+                class="project__link">Visit site <span class="arrow">&rarr;</span></a>
+              <p class="project__note">Sole developer. Took client from idea to production.</p>
             </div>
           </div>
 
@@ -218,12 +265,10 @@
               <span class="project__icon">+</span>
             </button>
             <div class="project__content">
-              <p class="project__description">A mentorship platform for legal professionals that standardizes the
-                selection process, matches mentors with mentees based on practice areas and goals, and provides a
-                centralized dashboard for tracking progress, sessions, and certifications. Outcomes: 180+ mentor-mentee matches, 450+ sessions tracked, 85% completion rate. Built from idea to live deployment end-to-end for the client.</p>
+              <p class="project__description">Mentorship platform for legal professionals—matching by practice area, tracking sessions and certifications, with a centralized admin dashboard. 180+ mentor-mentee matches, 450+ sessions tracked, 85% completion rate.</p>
               <a href="https://mentorship.jasan-foundation.org/" target="_blank" rel="noopener noreferrer"
-                class="project__link external-link">Visit site</a>
-              <p class="project__note">Built from idea to live deployment end-to-end for the client.</p>
+                class="project__link">Visit site <span class="arrow">&rarr;</span></a>
+              <p class="project__note">Sole developer. Took client from idea to production.</p>
             </div>
           </div>
 
@@ -237,10 +282,14 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div id="building" class="intro__building">
-        <h2>What I'm Building Currently</h2>
+      <section id="building" class="section reveal">
+        <div class="section__header" aria-label="Currently Building">
+          <span class="section__box-top">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;</span>
+          <h2 class="section__title-boxed"><span class="section__label">05</span> &#xB7; currently building</h2>
+          <span class="section__box-bot">&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;</span>
+        </div>
         <div class="projects">
           <div class="project project--building" aria-expanded="false">
             <button type="button" class="project__toggle" aria-expanded="false">
@@ -252,41 +301,61 @@
                 comprehensive company research, technical analysis, and meeting preparation in seconds instead of hours.
               </p>
               <a href="https://github.com/nedu-m/prepcall" target="_blank" rel="noopener noreferrer"
-                class="project__link external-link">View on GitHub</a>
+                class="project__link">View on GitHub <span class="arrow">&rarr;</span></a>
               <p class="project__note">Currently in active development.</p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div id="learning" class="intro__learning">
-        <h2>What I'm Learning</h2>
-        <ul class="learning__list">
-          <li><a href="https://theleanstartup.com/" target="_blank" rel="noopener noreferrer" class="external-link">The Lean Startup</a> <em>by Eric Ries</em></li>
-          <li><a href="https://www.momtestbook.com/" target="_blank" rel="noopener noreferrer" class="external-link">The Mom Test</a> <em>by Rob Fitzpatrick</em></li>
-          <li><a href="https://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205" target="_blank" rel="noopener noreferrer" class="external-link">The Hard Thing About Hard Things</a> <em>by Ben Horowitz</em></li>
-          <li><a href="https://www.jordanbpeterson.com/12-rules-for-life/" target="_blank" rel="noopener noreferrer" class="external-link">12 Rules for Life</a> <em>by Jordan B. Peterson</em></li>
+      <section id="learning" class="section reveal">
+        <div class="section__header" aria-label="Reading">
+          <span class="section__box-top">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;</span>
+          <h2 class="section__title-boxed"><span class="section__label">06</span> &#xB7; reading</h2>
+          <span class="section__box-bot">&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;</span>
+        </div>
+        <ul class="reading-list">
+          <li><a href="https://theleanstartup.com/" target="_blank" rel="noopener noreferrer">The Lean Startup</a> <em>Eric Ries</em></li>
+          <li><a href="https://www.momtestbook.com/" target="_blank" rel="noopener noreferrer">The Mom Test</a> <em>Rob Fitzpatrick</em></li>
+          <li><a href="https://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205" target="_blank" rel="noopener noreferrer">The Hard Thing About Hard Things</a> <em>Ben Horowitz</em></li>
+          <li><a href="https://www.jordanbpeterson.com/12-rules-for-life/" target="_blank" rel="noopener noreferrer">12 Rules for Life</a> <em>Jordan B. Peterson</em></li>
         </ul>
-      </div>
+      </section>
 
-      <div id="podcasts" class="intro__podcasts">
-        <h2>Podcasts</h2>
-        <ul class="learning__list">
-          <li><a href="https://nav.al/" target="_blank" rel="noopener noreferrer" class="external-link">Naval Podcast</a></li>
-          <li><a href="https://open.spotify.com/show/0wjYlCNxLDgFUUjZMaP6Dx" target="_blank" rel="noopener noreferrer" class="external-link">A Bit of Optimism</a></li>
+      <section id="podcasts" class="section reveal">
+        <div class="section__header" aria-label="Podcasts">
+          <span class="section__box-top">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;</span>
+          <h2 class="section__title-boxed"><span class="section__label">07</span> &#xB7; podcasts</h2>
+          <span class="section__box-bot">&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;</span>
+        </div>
+        <ul class="reading-list">
+          <li><a href="https://nav.al/" target="_blank" rel="noopener noreferrer">Naval Podcast</a></li>
+          <li><a href="https://open.spotify.com/show/0wjYlCNxLDgFUUjZMaP6Dx" target="_blank" rel="noopener noreferrer">A Bit of Optimism</a></li>
         </ul>
-      </div>
+      </section>
     </div>
   </main>
+
   <footer class="footer">
-    <div class="footer__cta">
+    <div class="footer__inner">
       <div class="cta-banner">
-        <span class="cta-banner__badge">Available for Hire</span>
+        <span class="cta-banner__badge">
+          <span class="cta-banner__dot"></span>
+          Available for Hire
+        </span>
         <p class="cta-banner__text">Need an experienced software engineer for your team or projects? Let's talk.</p>
-        <a href="mailto:edu.davidson@proton.me" class="cta-banner__button">Get in Touch</a>
+        <a href="mailto:edu.davidson@proton.me" class="cta-banner__button">
+          Get in Touch
+          <span class="arrow">&rarr;</span>
+        </a>
       </div>
     </div>
+    <div class="colophon">
+      <p>built with parcel &#xB7; scss &#xB7; vanilla js &#xB7; too much coffee</p>
+      <p>set in kudryashev + acumin pro</p>
+    </div>
   </footer>
+
   <svg class="cursor" width="100" height="100" viewBox="0 0 100 100">
     <defs>
       <filter id="cursor-filter" x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox">
