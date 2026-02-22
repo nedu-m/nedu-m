@@ -287,33 +287,44 @@ function initPixelPet() {
     resetIdleTimer();
 
     // --- Click reactions ---
+    let trickActive = false;
+
+    function doTrick(trickClass, emote, duration) {
+        if (trickActive) return;
+        trickActive = true;
+
+        // Pause the idle bobbing so it doesn't fight the trick animation
+        pet.style.animationPlayState = 'paused';
+
+        // Apply trick
+        pet.classList.add(trickClass);
+        showEmote(emote, duration);
+
+        function cleanup() {
+            pet.classList.remove(trickClass);
+            pet.style.animationPlayState = 'running';
+            trickActive = false;
+            pet.removeEventListener('animationend', cleanup);
+        }
+
+        pet.addEventListener('animationend', cleanup, { once: true });
+
+        // Fallback in case animationend doesn't fire
+        setTimeout(cleanup, 1000);
+    }
+
     pet.addEventListener('click', () => {
         resetIdleTimer();
+        if (trickActive) return;
 
-        // Remove any existing trick classes
-        pet.classList.remove('pet--jump', 'pet--spin');
-
-        // Pick a random reaction
         const roll = Math.random();
         if (roll < 0.5) {
-            // Jump
-            void pet.offsetWidth; // force reflow
-            pet.classList.add('pet--jump');
-            showEmote(':D', 1500);
-            setTimeout(() => pet.classList.remove('pet--jump'), 500);
+            doTrick('pet--jump', ':D', 1500);
         } else if (roll < 0.8) {
-            // Spin
-            void pet.offsetWidth;
-            pet.classList.add('pet--spin');
-            showEmote('~', 1200);
-            setTimeout(() => pet.classList.remove('pet--spin'), 600);
+            doTrick('pet--spin', '~', 1200);
         } else {
-            // Random emote
             const emotes = ['o/', '*_*', '^_^', '> <', ':3', '!!'];
-            showEmote(emotes[Math.floor(Math.random() * emotes.length)], 1800);
-            void pet.offsetWidth;
-            pet.classList.add('pet--jump');
-            setTimeout(() => pet.classList.remove('pet--jump'), 500);
+            doTrick('pet--jump', emotes[Math.floor(Math.random() * emotes.length)], 1800);
         }
     });
 
