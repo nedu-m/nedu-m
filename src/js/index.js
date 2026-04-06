@@ -189,26 +189,26 @@ function initStatusLine() {
     if (!el) return;
 
     const statuses = [
+        'building prepcall',
         'shipping betsignal',
         'reading the mom test',
         'refactoring something',
         'deploying to production',
         'writing python',
-        'building prepcall',
         'debugging at 2am',
         'reviewing pull requests',
         'arguing with a dockerfile',
         'one more migration won\'t hurt',
-        'ssh\'d into something',
-        'writing fastapi endpoints',
+        'kubectl get pods --all-namespaces',
         'grepping through logs',
         'pip install hope',
-        'rm -rf node_modules && pray',
+        'terraform plan && pray',
         'fixing what worked yesterday',
-        'reading man pages at midnight',
         'chmod 777 and looking away',
         'it works on my machine',
         'listening to naval',
+        'ssh\'d into a prod server',
+        'writing fastapi endpoints',
     ];
 
     let current = 0;
@@ -339,9 +339,8 @@ function initPixelPet() {
     const sectionMoods = {
         'built': 'happy',
         'building': 'excited',
-        'work': 'excited',
+        'experience': 'excited',
         'solve': 'happy',
-        'enterprise': 'happy',
         'learning': 'sleepy',
         'podcasts': 'sleepy',
     };
@@ -460,7 +459,10 @@ function initCursor() {
 }
 
 // Initialize everything
+let initialized = false;
 function init() {
+    if (initialized) return;
+    initialized = true;
     initMobileMenu();
     initProjects();
     initWorkCards();
@@ -472,13 +474,8 @@ function init() {
     initCursor();
 }
 
-// Multiple initialization strategies for maximum compatibility
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
 } else {
-    // DOM already loaded
     init();
 }
-
-// Also try after a short delay as fallback
-setTimeout(init, 50);
