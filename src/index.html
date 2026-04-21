@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chukwunedum Davidson — Product Engineer</title>
-  <meta name="description" content="Full-stack engineer with 6+ years shipping production systems across React, Next.js, TypeScript, Python, and AWS/Cloudflare infrastructure. Based in Lagos, Nigeria." />
+  <title>Chukwunedum Davidson — AI Systems Builder</title>
+  <meta name="description" content="AI Systems Builder shipping production AI agents end-to-end — from agent architecture through deployment and evals. Claude Code daily. Anthropic API, OpenAI, Cloudflare. Based in Lagos, Nigeria." />
   <meta name="theme-color" content="#0a0a0b" />
 
   <link rel="preconnect" href="https://use.typekit.net" crossorigin />
@@ -65,7 +65,7 @@
       <a class="frame__link" href="#solve">Skills</a>
       <a class="frame__link" href="#experience">Experience</a>
       <a class="frame__link" href="#built">Work</a>
-      <a class="frame__link" href="#building">Current</a>
+      <a class="frame__link" href="#writing">Writing</a>
       <a class="frame__link" href="#learning">Reading</a>
       <a class="frame__link frame__link--ext" href="https://github.com/nedu-m" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a class="frame__link frame__link--ext" href="https://linkedin.com/in/chukwunedum-davidson" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -75,13 +75,13 @@
       <section class="hero reveal">
         <div class="hero__label">
           <span class="hero__dot"></span>
-          <span>Product Engineer</span>
+          <span>AI Systems Builder</span>
         </div>
         <h1 class="hero__name">
           <span class="hero__name-line">Chukwunedum</span>
           <span class="hero__name-line hero__name-line--indent">Davidson</span>
         </h1>
-        <p class="hero__bio">Product engineer from Lagos. Five years shipping production systems end-to-end—no handoffs, no gaps. Built in environments where the network drops, the bank times out, and the user is on 3G. It taught me what production-ready actually means.</p>
+        <p class="hero__bio">AI Systems Builder from Lagos. I ship AI-native systems end-to-end — from agent architecture through deployment, evals, and iteration — using Claude Code daily and the Anthropic API. Built in environments where the network drops, the bank times out, and the user is on 3G. It taught me what production-ready actually means.</p>
         <div class="hero__meta">
           <span class="hero__location">Lagos, Nigeria</span>
           <span class="hero__sep">/</span>
@@ -117,8 +117,8 @@
             <p>GitHub Actions, CircleCI, AWS CodePipeline, Make.com, n8n, Bash/Shell scripting</p>
           </div>
           <div class="skill-group">
-            <h3>AI & LLM</h3>
-            <p>OpenAI API (GPT-4o-mini, function calling), Claude API, Prompt Engineering, RLHF Evaluation, RAG pipelines</p>
+            <h3>AI & Agents</h3>
+            <p>Claude Code (daily), Anthropic API (text + vision), OpenAI API (GPT-4o / GPT-4o-mini), agent architecture, prompt evals, Make.com, Zapier</p>
           </div>
           <div class="skill-group">
             <h3>Observability</h3>
@@ -158,17 +158,15 @@
             <div class="exp-item__top">
               <div class="exp-item__left">
                 <span class="exp-item__company">DataFlex Nigeria</span>
-                <span class="exp-item__role">Senior Software Engineer &amp; Cybersecurity Presales Specialist</span>
+                <span class="exp-item__role">Pre-Sales Technical Specialist</span>
               </div>
               <div class="exp-item__meta">
-                <span class="exp-item__period">Sep 2023 – Feb 2026</span>
+                <span class="exp-item__period">Feb 2023 – Feb 2026</span>
               </div>
             </div>
             <ul class="exp-item__bullets">
-              <li>Built DataFlex Intranet (Next.js, Express, MongoDB) and a BOM Validator that automated RFQ pipelines — cut turnaround by 60%</li>
-              <li>Managed containerised infrastructure (Docker, Kubernetes) for Tier-1 banking clients; operated Kafka and RabbitMQ for async processing at scale</li>
-              <li>Supported $190K+ in technical wins across Fortinet FortiSASE, SolarWinds, Palo Alto NGFW, and Kaspersky</li>
-              <li>Built PrepCall — an AI presales intelligence tool generating pre-call briefs and competitive analysis using LLM APIs</li>
+              <li>Built internal AI and automation tools (PrepCall, an intranet portal, a Bill-of-Materials validator) that replaced manual work for sales and solutioning teams</li>
+              <li>Supported deals across Fortinet, Palo Alto, Huawei AICC, and Cisco Webex stacks; contributed to $190K+ in pipeline. Translated technical systems into language non-technical buyers could act on</li>
             </ul>
           </div>
 
@@ -233,7 +231,7 @@
               <span class="project__icon">+</span>
             </button>
             <div class="project__content">
-              <p class="project__description">Regulatory intelligence platform covering policies, agencies, compliance obligations, and timelines across 13 African jurisdictions. LLM-powered data extraction with Claude API and structured prompt templates. Built full stack: Node.js, PostgreSQL, Cloudflare CDN, GitHub Actions CI/CD. 2,500+ monthly active users. 60% reduction in research time for policy professionals.</p>
+              <p class="project__description">Architected and shipped a 13-service backend that ingests policy documents across African jurisdictions and produces structured intelligence for compliance teams. Claude API drives structured extraction: raw policy PDFs / web pages → normalized schema (policies, agencies, obligations, timelines) — with evals for extraction accuracy and hallucination rate before each prompt change. Full production stack end-to-end: Node.js + PostgreSQL, Docker, GitHub Actions CI/CD, Cloudflare proxy, DigitalOcean. Claude Code as daily development driver. Built internal dashboards and playbooks so the non-technical founder can operate the system independently. 2,500+ monthly active users.</p>
               <a href="https://techpolicyadvisory.com/" target="_blank" rel="noopener noreferrer"
                 class="project__link">Visit site <span class="arrow">&rarr;</span></a>
               <p class="project__note">Sole developer. Took client from idea to production.</p>
@@ -255,36 +253,49 @@
 
           <div class="project" aria-expanded="false">
             <button type="button" class="project__toggle" aria-expanded="false">
-              <span class="project__title">Job Hunter Pipeline</span>
+              <span class="project__title">RoleRadar</span>
               <span class="project__icon">+</span>
             </button>
             <div class="project__content">
-              <p class="project__description">Automated job search and scoring system built in Python/Flask. Integrates BambooHR, Greenhouse, and Lever ATS APIs to scrape, normalise, and aggregate listings. Uses GPT-4o-mini with function calling for structured data extraction and role scoring against a profile. Push notifications via Telegram Bot API; deployed on personal DigitalOcean infrastructure.</p>
+              <p class="project__description">Production AI agent for job-market intelligence. Scrapes Greenhouse, Lever, and BambooHR ATS platforms, scores listings against a candidate profile with GPT-4o-mini, de-duplicates, and delivers qualified matches to a Telegram channel on a schedule. Wrote evals on ranking accuracy, de-dup rate, and false-positive rate to tune prompts and filters before and after deployment — iterated agent logic based on real-world output data. Python + Flask + SQLite.</p>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section id="building" class="section reveal">
-        <div class="section__header" aria-label="Currently Building">
-          <span class="section__box-top">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;</span>
-          <h2 class="section__title-boxed"><span class="section__label">04</span> &#xB7; currently building</h2>
-          <span class="section__box-bot">&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;</span>
-        </div>
-        <div class="projects">
-          <div class="project project--building" aria-expanded="false">
+          <div class="project" aria-expanded="false">
+            <button type="button" class="project__toggle" aria-expanded="false">
+              <span class="project__title">Clicky for macOS</span>
+              <span class="project__icon">+</span>
+            </button>
+            <div class="project__content">
+              <p class="project__description">AI desktop companion adapted from Farza's open-source fork. Extended the model layer with OpenAI (GPT-4o / GPT-4.1) and Claude vision models alongside the original Claude-text stack. Screen-aware agent that pushes live screenshots to the selected vision model and renders pointer overlays from inline [POINT:x,y] tags across multiple monitors. Swift + ScreenCaptureKit on the client; Cloudflare Worker (TypeScript) as API proxy so provider keys never ship in the binary. Multi-provider TTS fallback chain: OpenAI → Speechmatics → ElevenLabs. Real-time loop: AssemblyAI websocket transcription → streaming SSE to the chat model → streaming TTS playback, all triggered by a global push-to-talk hotkey.</p>
+              <a href="https://github.com/nedu-m/clicky" target="_blank" rel="noopener noreferrer"
+                class="project__link">View on GitHub <span class="arrow">&rarr;</span></a>
+            </div>
+          </div>
+
+          <div class="project" aria-expanded="false">
             <button type="button" class="project__toggle" aria-expanded="false">
               <span class="project__title">PrepCall</span>
               <span class="project__icon">+</span>
             </button>
             <div class="project__content">
-              <p class="project__description">AI-powered presales intelligence tool. Generates account briefs, competitive positioning, objection maps, and discovery questions from prospect data using LLM APIs. Built during active enterprise sales cycles at DataFlex — solving a real workflow problem with measurable presales efficiency gains.</p>
+              <p class="project__description">Claude-powered presales intelligence agent built for the DataFlex sales team. Ingests prospect signals (domain, LinkedIn, public filings) and produces deal-qualified call-prep briefs. Replaced a ~2-hour manual research process per call. Built for non-technical sales users — clean UI, minimal inputs, predictable outputs.</p>
               <a href="https://github.com/nedu-m/prepcall" target="_blank" rel="noopener noreferrer"
                 class="project__link">View on GitHub <span class="arrow">&rarr;</span></a>
-              <p class="project__note">Currently in active development.</p>
             </div>
           </div>
         </div>
+      </section>
+
+      <section id="writing" class="section reveal">
+        <div class="section__header" aria-label="Writing">
+          <span class="section__box-top">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;</span>
+          <h2 class="section__title-boxed"><span class="section__label">04</span> &#xB7; writing</h2>
+          <span class="section__box-bot">&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;</span>
+        </div>
+        <ul class="reading-list">
+          <li><a href="https://builderswhosell.com" target="_blank" rel="noopener noreferrer">builderswhosell.com</a> — Essays on building products and distribution in the AI era. Recent: <em>"What Accumulates?"</em> (moats in the AI era) and <em>"Thou Shalt Not Make a Machine in the Likeness of a Man's Mind"</em> (on the limits of LLM cognition).</li>
+        </ul>
       </section>
 
       <section id="learning" class="section reveal">
@@ -318,7 +329,7 @@
   <footer class="footer">
     <div class="footer-cta">
       <p class="footer-cta__line">Have something to build?</p>
-      <a href="mailto:edu.davidson@proton.me" class="footer-cta__link">edu.davidson@proton.me <span class="arrow">&rarr;</span></a>
+      <a href="mailto:davidsonchinedum@gmail.com" class="footer-cta__link">davidsonchinedum@gmail.com <span class="arrow">&rarr;</span></a>
     </div>
   </footer>
 
