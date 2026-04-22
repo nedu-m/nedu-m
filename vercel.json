@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "nedu-m.vercel.app" }],
+      "destination": "https://nedum.xyz/$1",
+      "permanent": true
+    }
+  ]
+}
