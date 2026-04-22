@@ -1,351 +1,399 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chukwunedum Davidson — AI Systems Builder</title>
-  <meta name="description" content="AI Systems Builder shipping production AI agents end-to-end — from agent architecture through deployment and evals. Claude Code daily. Anthropic API, OpenAI, Cloudflare. Based in Lagos, Nigeria." />
-  <meta name="theme-color" content="#0a0a0b" />
+  <meta name="description"
+    content="Lagos-based engineer building AI systems, product infrastructure, and durable software for real-world conditions." />
+  <meta name="theme-color" content="#0e0d0b" />
 
-  <link rel="preconnect" href="https://use.typekit.net" crossorigin />
-  <link rel="stylesheet" href="https://use.typekit.net/jdl7wqk.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Syne:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="css/base.scss" />
-  <script>
-    document.documentElement.className = "js";
-    var supportsCssVars = function () {
-      var e,
-        t = document.createElement("style");
-      return (
-        (t.innerHTML = "root: { --tmp-var: bold; }"),
-        document.head.appendChild(t),
-        (e = !!(
-          window.CSS &&
-          window.CSS.supports &&
-          window.CSS.supports("font-weight", "var(--tmp-var)")
-        )),
-        t.parentNode.removeChild(t),
-        e
-      );
-    };
-    supportsCssVars() ||
-      alert(
-        "Please view this demo in a modern browser that supports CSS Variables."
-      );
-  </script>
+  <script>document.documentElement.className = "js";</script>
 </head>
 
 <body>
-  <!-- Grain texture overlay -->
-  <div class="grain" aria-hidden="true"></div>
+  <a class="skip-link" href="#content">Skip to content</a>
 
-  <!-- Pixel pet -->
-  <div class="pet" aria-hidden="true" id="pixelPet">
-    <div class="pet__emote" id="petEmote"></div>
-    <div class="pet__body">
-      <div class="pet__eye pet__eye--l"></div>
-      <div class="pet__eye pet__eye--r"></div>
-      <div class="pet__mouth" id="petMouth"></div>
-    </div>
-    <div class="pet__legs">
-      <div class="pet__leg"></div>
-      <div class="pet__leg"></div>
-    </div>
-    <div class="pet__shadow"></div>
-  </div>
-
-  <main>
-    <header class="frame">
-      <a class="frame__logo" href="#">CD</a>
-      <button class="frame__menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false">
-        <span class="frame__menu-icon"></span>
-      </button>
-    </header>
-    <nav class="frame__nav">
-      <a class="frame__link" href="#solve">Skills</a>
-      <a class="frame__link" href="#experience">Experience</a>
-      <a class="frame__link" href="#built">Work</a>
-      <a class="frame__link" href="#writing">Writing</a>
-      <a class="frame__link" href="#learning">Reading</a>
-      <a class="frame__link frame__link--ext" href="https://github.com/nedu-m" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a class="frame__link frame__link--ext" href="https://linkedin.com/in/chukwunedum-davidson" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <header class="nav">
+    <a class="nav__brand" href="#hero" aria-label="Go to top">CD</a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+      aria-label="Toggle navigation">
+      <span></span><span></span>
+    </button>
+    <nav id="site-nav" class="nav__links" aria-label="Primary">
+      <a class="nav__link" href="#work">Work</a>
+      <a class="nav__link" href="#systems">Systems</a>
+      <a class="nav__link" href="#experience">Experience</a>
+      <a class="nav__link" href="#notes">Notes</a>
+      <a class="nav__link nav__link--cta" href="#contact">Contact</a>
     </nav>
+  </header>
 
-    <div class="intro">
-      <section class="hero reveal">
-        <div class="hero__label">
-          <span class="hero__dot"></span>
-          <span>AI Systems Builder</span>
+  <main id="content">
+
+    <!-- ═══════════════════════════════════════ HERO -->
+    <section id="hero" class="hero">
+      <div class="hero__meta-top">
+        <span class="tag">Lagos, Nigeria</span>
+        <span id="localTime" class="tag">--:-- WAT</span>
+        <span class="tag tag--live"><span class="live-dot" aria-hidden="true"></span>Open to select builds</span>
+      </div>
+
+      <div class="hero__stage">
+        <div class="hero__title-block">
+          <p class="hero__overline">Engineering Studio · AI Systems · Product Delivery</p>
+          <h1 class="hero__title" aria-label="Durable software for the real world.">
+            <span class="hero__line">Durable</span>
+            <span class="hero__line hero__line--italic">software</span>
+            <span class="hero__line">for the</span>
+            <span class="hero__line hero__line--accent">real world.</span>
+          </h1>
         </div>
-        <h1 class="hero__name">
-          <span class="hero__name-line">Chukwunedum</span>
-          <span class="hero__name-line hero__name-line--indent">Davidson</span>
-        </h1>
-        <p class="hero__bio">AI Systems Builder from Lagos. I ship AI-native systems end-to-end — from agent architecture through deployment, evals, and iteration — using Claude Code daily and the Anthropic API. Built in environments where the network drops, the bank times out, and the user is on 3G. It taught me what production-ready actually means.</p>
-        <div class="hero__meta">
-          <span class="hero__location">Lagos, Nigeria</span>
-          <span class="hero__sep">/</span>
-          <span class="hero__time" id="localTime"></span>
-        </div>
-        <div class="hero__status">
-          <span class="hero__caret">&gt;</span>
-          <span class="hero__status-text" id="statusLine"></span>
-        </div>
-      </section>
 
-      <section id="solve" class="section reveal">
-        <div class="section__header" aria-label="Core Skills">
-          <span class="section__box-top">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;</span>
-          <h2 class="section__title-boxed"><span class="section__label">01</span> &#xB7; core skills</h2>
-          <span class="section__box-bot">&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;</span>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-group">
-            <h3>Frontend</h3>
-            <p>React, Next.js, TypeScript, Tailwind CSS, Design Systems, Figma-to-code, Component Libraries</p>
-          </div>
-          <div class="skill-group">
-            <h3>Backend</h3>
-            <p>Node.js, Python, FastAPI, Express, REST APIs, SQL, PostgreSQL, MongoDB, Redis</p>
-          </div>
-          <div class="skill-group">
-            <h3>Cloud & Infrastructure</h3>
-            <p>AWS (EKS, EC2, RDS, S3, Lambda, Route 53), DigitalOcean, Cloudflare, Docker, Kubernetes, Terraform, Helm</p>
-          </div>
-          <div class="skill-group">
-            <h3>CI/CD & Automation</h3>
-            <p>GitHub Actions, CircleCI, AWS CodePipeline, Make.com, n8n, Bash/Shell scripting</p>
-          </div>
-          <div class="skill-group">
-            <h3>AI & Agents</h3>
-            <p>Claude Code (daily), Anthropic API (text + vision), OpenAI API (GPT-4o / GPT-4o-mini), agent architecture, prompt evals, Make.com, Zapier</p>
-          </div>
-          <div class="skill-group">
-            <h3>Observability</h3>
-            <p>Prometheus, Grafana, Alertmanager, Sentry, Datadog, CloudWatch, structured logging</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="experience" class="section reveal">
-        <div class="section__header" aria-label="Experience">
-          <span class="section__box-top">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;</span>
-          <h2 class="section__title-boxed"><span class="section__label">02</span> &#xB7; experience</h2>
-          <span class="section__box-bot">&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;</span>
-        </div>
-        <div class="exp-list">
-
-          <div class="exp-item exp-item--current">
-            <div class="exp-item__top">
-              <div class="exp-item__left">
-                <span class="exp-item__company">Tech Policy Advisory</span>
-                <span class="exp-item__role">Founding Engineer / DevOps Lead</span>
-              </div>
-              <div class="exp-item__meta">
-                <span class="exp-item__period">Jan 2026 – Present</span>
-                <span class="exp-item__badge">current</span>
-              </div>
-            </div>
-            <ul class="exp-item__bullets">
-              <li>Designed and deployed production infrastructure from scratch serving users across 13 African countries, the US, Europe, and China — 99.9% uptime since launch</li>
-              <li>Built CI/CD pipelines with GitHub Actions — reduced deployment time from manual hours to under 10 minutes</li>
-              <li>Integrated Claude API for regulatory policy data extraction; Cloudflare CDN for low-latency delivery across 4 continents</li>
-              <li>Full observability stack (Sentry, Grafana) with proactive incident detection and root cause analysis</li>
-            </ul>
+        <aside class="hero__sidebar" aria-label="Profile details">
+          <div class="hero__id">
+            <p class="label">Builder</p>
+            <p class="hero__name">Chukwunedum Davidson</p>
+            <p class="hero__bio">Lagos-based engineer working across AI products, backend systems, and cloud
+              infrastructure. Engineering depth meets product judgment.</p>
           </div>
 
-          <div class="exp-item">
-            <div class="exp-item__top">
-              <div class="exp-item__left">
-                <span class="exp-item__company">DataFlex Nigeria</span>
-                <span class="exp-item__role">Pre-Sales Technical Specialist</span>
-              </div>
-              <div class="exp-item__meta">
-                <span class="exp-item__period">Feb 2023 – Feb 2026</span>
-              </div>
-            </div>
-            <ul class="exp-item__bullets">
-              <li>Built internal AI and automation tools (PrepCall, an intranet portal, a Bill-of-Materials validator) that replaced manual work for sales and solutioning teams</li>
-              <li>Supported deals across Fortinet, Palo Alto, Huawei AICC, and Cisco Webex stacks; contributed to $190K+ in pipeline. Translated technical systems into language non-technical buyers could act on</li>
-            </ul>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#work">Selected work</a>
+            <a class="btn btn--outline" href="mailto:davidsonchinedum@gmail.com">Get in touch</a>
           </div>
 
-          <div class="exp-item">
-            <div class="exp-item__top">
-              <div class="exp-item__left">
-                <span class="exp-item__company">Springboard USA</span>
-                <span class="exp-item__role">Lead Mentor / Software Engineer</span>
-              </div>
-              <div class="exp-item__meta">
-                <span class="exp-item__period">May 2022 – Sep 2024</span>
-              </div>
-            </div>
-            <ul class="exp-item__bullets">
-              <li>Led 9-engineer mentorship cohort — established code review workflows, deployment standards, and incident response documentation; 100% completion rate</li>
-              <li>Managed cloud deployments (AWS, Vercel) and CI/CD pipelines for distributed engineering teams</li>
-            </ul>
+          <div class="hero__focus">
+            <p class="label">Current focus</p>
+            <p class="hero__focus-text" id="statusLine">Shipping AI systems with production discipline</p>
           </div>
+        </aside>
+      </div>
+    </section>
 
-          <div class="exp-item">
-            <div class="exp-item__top">
-              <div class="exp-item__left">
-                <span class="exp-item__company">AppSwift</span>
-                <span class="exp-item__role">Software Developer — Intern to Lead</span>
-              </div>
-              <div class="exp-item__meta">
-                <span class="exp-item__period">Jul 2019 – Jul 2022</span>
-              </div>
-            </div>
-            <ul class="exp-item__bullets">
-              <li>Progressed from intern to lead; owned end-to-end delivery across concurrent client projects — architecture through production deployment</li>
-              <li>Built web applications and APIs (Node.js, JavaScript, SQL); introduced code review practices and deployment discipline to an early-stage team</li>
-            </ul>
-          </div>
-
-        </div>
-      </section>
-
-      <section id="built" class="section reveal">
-        <div class="section__header" aria-label="Things I've Built">
-          <span class="section__box-top">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;</span>
-          <h2 class="section__title-boxed"><span class="section__label">03</span> &#xB7; things i've built</h2>
-          <span class="section__box-bot">&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;</span>
-        </div>
-        <div class="projects">
-          <div class="project project--featured" aria-expanded="false">
-            <button type="button" class="project__toggle" aria-expanded="false">
-              <span class="project__title">BetSignal</span>
-              <span class="project__badge">Featured</span>
-              <span class="project__icon">+</span>
-            </button>
-            <div class="project__content">
-              <p class="project__description">Football value-betting platform with a self-calibrating Poisson model that finds edge vs bookmaker odds and learns from resolved predictions. Three-service architecture: prediction engine (FastAPI + SQLite), web API (auth + proxy), and Telegram bot — all sharing a single brain. Covers 10 leagues, 800+ team name mappings, and auto-resolves picks on a cron schedule. ~10,930 pageviews/month. Prometheus + Grafana monitoring; Cloudflare caching to reduce origin load.</p>
-              <a href="https://betsignal.live/welcome" target="_blank" rel="noopener noreferrer"
-                class="project__link">Visit site <span class="arrow">&rarr;</span></a>
-            </div>
-          </div>
-
-          <div class="project" aria-expanded="false">
-            <button type="button" class="project__toggle" aria-expanded="false">
-              <span class="project__title">Africa Tech Policy Tracker</span>
-              <span class="project__icon">+</span>
-            </button>
-            <div class="project__content">
-              <p class="project__description">Architected and shipped a 13-service backend that ingests policy documents across African jurisdictions and produces structured intelligence for compliance teams. Claude API drives structured extraction: raw policy PDFs / web pages → normalized schema (policies, agencies, obligations, timelines) — with evals for extraction accuracy and hallucination rate before each prompt change. Full production stack end-to-end: Node.js + PostgreSQL, Docker, GitHub Actions CI/CD, Cloudflare proxy, DigitalOcean. Claude Code as daily development driver. Built internal dashboards and playbooks so the non-technical founder can operate the system independently. 2,500+ monthly active users.</p>
-              <a href="https://techpolicyadvisory.com/" target="_blank" rel="noopener noreferrer"
-                class="project__link">Visit site <span class="arrow">&rarr;</span></a>
-              <p class="project__note">Sole developer. Took client from idea to production.</p>
-            </div>
-          </div>
-
-          <div class="project" aria-expanded="false">
-            <button type="button" class="project__toggle" aria-expanded="false">
-              <span class="project__title">Jasan Mentorship</span>
-              <span class="project__icon">+</span>
-            </button>
-            <div class="project__content">
-              <p class="project__description">Mentorship platform for legal professionals — matching by practice area, tracking sessions and certifications, with a centralised admin dashboard. 180+ mentor-mentee matches, 450+ sessions tracked, 85% completion rate.</p>
-              <a href="https://mentorship.jasan-foundation.org/" target="_blank" rel="noopener noreferrer"
-                class="project__link">Visit site <span class="arrow">&rarr;</span></a>
-              <p class="project__note">Sole developer. Took client from idea to production.</p>
-            </div>
-          </div>
-
-          <div class="project" aria-expanded="false">
-            <button type="button" class="project__toggle" aria-expanded="false">
-              <span class="project__title">RoleRadar</span>
-              <span class="project__icon">+</span>
-            </button>
-            <div class="project__content">
-              <p class="project__description">Production AI agent for job-market intelligence. Scrapes Greenhouse, Lever, and BambooHR ATS platforms, scores listings against a candidate profile with GPT-4o-mini, de-duplicates, and delivers qualified matches to a Telegram channel on a schedule. Wrote evals on ranking accuracy, de-dup rate, and false-positive rate to tune prompts and filters before and after deployment — iterated agent logic based on real-world output data. Python + Flask + SQLite.</p>
-            </div>
-          </div>
-
-          <div class="project" aria-expanded="false">
-            <button type="button" class="project__toggle" aria-expanded="false">
-              <span class="project__title">Clicky for macOS</span>
-              <span class="project__icon">+</span>
-            </button>
-            <div class="project__content">
-              <p class="project__description">AI desktop companion adapted from Farza's open-source fork. Extended the model layer with OpenAI (GPT-4o / GPT-4.1) and Claude vision models alongside the original Claude-text stack. Screen-aware agent that pushes live screenshots to the selected vision model and renders pointer overlays from inline [POINT:x,y] tags across multiple monitors. Swift + ScreenCaptureKit on the client; Cloudflare Worker (TypeScript) as API proxy so provider keys never ship in the binary. Multi-provider TTS fallback chain: OpenAI → Speechmatics → ElevenLabs. Real-time loop: AssemblyAI websocket transcription → streaming SSE to the chat model → streaming TTS playback, all triggered by a global push-to-talk hotkey.</p>
-              <a href="https://github.com/nedu-m/clicky" target="_blank" rel="noopener noreferrer"
-                class="project__link">View on GitHub <span class="arrow">&rarr;</span></a>
-            </div>
-          </div>
-
-          <div class="project" aria-expanded="false">
-            <button type="button" class="project__toggle" aria-expanded="false">
-              <span class="project__title">PrepCall</span>
-              <span class="project__icon">+</span>
-            </button>
-            <div class="project__content">
-              <p class="project__description">Claude-powered presales intelligence agent built for the DataFlex sales team. Ingests prospect signals (domain, LinkedIn, public filings) and produces deal-qualified call-prep briefs. Replaced a ~2-hour manual research process per call. Built for non-technical sales users — clean UI, minimal inputs, predictable outputs.</p>
-              <a href="https://github.com/nedu-m/prepcall" target="_blank" rel="noopener noreferrer"
-                class="project__link">View on GitHub <span class="arrow">&rarr;</span></a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="writing" class="section reveal">
-        <div class="section__header" aria-label="Writing">
-          <span class="section__box-top">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;</span>
-          <h2 class="section__title-boxed"><span class="section__label">04</span> &#xB7; writing</h2>
-          <span class="section__box-bot">&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;</span>
-        </div>
-        <ul class="reading-list">
-          <li><a href="https://builderswhosell.com" target="_blank" rel="noopener noreferrer">builderswhosell.com</a> — Essays on building products and distribution in the AI era. Recent: <em>"What Accumulates?"</em> (moats in the AI era) and <em>"Thou Shalt Not Make a Machine in the Likeness of a Man's Mind"</em> (on the limits of LLM cognition).</li>
-        </ul>
-      </section>
-
-      <section id="learning" class="section reveal">
-        <div class="section__header" aria-label="Reading">
-          <span class="section__box-top">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;</span>
-          <h2 class="section__title-boxed"><span class="section__label">05</span> &#xB7; reading</h2>
-          <span class="section__box-bot">&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;</span>
-        </div>
-        <ul class="reading-list">
-          <li><a href="https://theleanstartup.com/" target="_blank" rel="noopener noreferrer">The Lean Startup</a> <em>Eric Ries</em></li>
-          <li><a href="https://www.momtestbook.com/" target="_blank" rel="noopener noreferrer">The Mom Test</a> <em>Rob Fitzpatrick</em></li>
-          <li><a href="https://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205" target="_blank" rel="noopener noreferrer">The Hard Thing About Hard Things</a> <em>Ben Horowitz</em></li>
-          <li><a href="https://www.jordanbpeterson.com/12-rules-for-life/" target="_blank" rel="noopener noreferrer">12 Rules for Life</a> <em>Jordan B. Peterson</em></li>
-        </ul>
-      </section>
-
-      <section id="podcasts" class="section reveal">
-        <div class="section__header" aria-label="Podcasts">
-          <span class="section__box-top">&#x250C;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2510;</span>
-          <h2 class="section__title-boxed"><span class="section__label">06</span> &#xB7; podcasts</h2>
-          <span class="section__box-bot">&#x2514;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2518;</span>
-        </div>
-        <ul class="reading-list">
-          <li><a href="https://nav.al/" target="_blank" rel="noopener noreferrer">Naval Podcast</a></li>
-          <li><a href="https://open.spotify.com/show/0wjYlCNxLDgFUUjZMaP6Dx" target="_blank" rel="noopener noreferrer">A Bit of Optimism</a></li>
-        </ul>
-      </section>
+    <!-- ═══════════════════════════════════════ METRICS -->
+    <div class="metrics" aria-label="Key metrics">
+      <div class="metrics__item">
+        <span class="metrics__num">13</span>
+        <span class="metrics__label">countries served</span>
+      </div>
+      <div class="metrics__item">
+        <span class="metrics__num">99.9%</span>
+        <span class="metrics__label">uptime since launch</span>
+      </div>
+      <div class="metrics__item">
+        <span class="metrics__num">2,500+</span>
+        <span class="metrics__label">monthly active users</span>
+      </div>
+      <div class="metrics__item">
+        <span class="metrics__num">end-to-end</span>
+        <span class="metrics__label">architecture to operations</span>
+      </div>
     </div>
+
+    <!-- ═══════════════════════════════════════ WORK -->
+    <section id="work" class="section">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">01</span>
+        <div>
+          <p class="eyebrow">Selected Work</p>
+          <h2 class="section__title">Case studies shaped by reliability, leverage, and product sense.</h2>
+        </div>
+      </div>
+
+      <div class="works">
+        <article class="work-item work-item--featured reveal">
+          <div class="work-item__index">01 / Flagship</div>
+          <div class="work-item__body">
+            <div class="work-item__left">
+              <p class="work-item__type">Policy intelligence platform</p>
+              <h3 class="work-item__title">Africa Tech Policy Tracker</h3>
+              <p class="work-item__desc">Built a 13-service backend that turns policy documents across African
+                jurisdictions into structured intelligence for compliance teams.</p>
+              <div class="work-item__tags">
+                <span>Claude extraction with evals</span>
+                <span>2,500+ MAU</span>
+                <span>Sole builder</span>
+              </div>
+            </div>
+            <div class="work-item__right">
+              <p>Owned the extraction flow, dashboards, deployment stack, and operating playbooks so the product could
+                run with confidence beyond the build phase.</p>
+              <ul>
+                <li>Node.js, PostgreSQL, Docker, GitHub Actions, DigitalOcean, Cloudflare</li>
+                <li>Structured extraction with evals for accuracy and hallucination control</li>
+                <li>Built for non-technical operation after launch</li>
+              </ul>
+              <a class="work-item__link" href="https://techpolicyadvisory.com/" target="_blank"
+                rel="noopener noreferrer">Visit site ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-item reveal">
+          <div class="work-item__index">02 / Live product</div>
+          <div class="work-item__body">
+            <div class="work-item__left">
+              <p class="work-item__type">Prediction engine</p>
+              <h3 class="work-item__title">BetSignal</h3>
+              <p class="work-item__desc">A football value-betting platform built around a self-calibrating Poisson
+                model, with monitoring and automated resolution workflows.</p>
+              <div class="work-item__tags">
+                <span>10 leagues</span>
+                <span>800+ team mappings</span>
+                <span>10,930 pageviews/mo</span>
+              </div>
+            </div>
+            <div class="work-item__right">
+              <p>Designed as a multi-service system with a shared prediction core and the operational tooling needed to
+                keep it accurate over time.</p>
+              <ul>
+                <li>FastAPI, SQLite, Telegram bot, Prometheus, Grafana, Cloudflare</li>
+                <li>Recurring cron-based resolution and model recalibration</li>
+              </ul>
+              <a class="work-item__link" href="https://betsignal.live/welcome" target="_blank"
+                rel="noopener noreferrer">Visit site ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-item reveal">
+          <div class="work-item__index">03 / Internal system</div>
+          <div class="work-item__body">
+            <div class="work-item__left">
+              <p class="work-item__type">Sales intelligence agent</p>
+              <h3 class="work-item__title">PrepCall</h3>
+              <p class="work-item__desc">A Claude-powered presales tool that turns prospect signals into call-prep briefs
+                and removes hours of manual research.</p>
+              <div class="work-item__tags">
+                <span>Low-friction inputs</span>
+                <span>Predictable outputs</span>
+                <span>Built for adoption</span>
+              </div>
+            </div>
+            <div class="work-item__right">
+              <p>Designed for a non-technical sales team, with strong attention to trust, repeatability, and output
+                quality.</p>
+              <ul>
+                <li>Internal workflow automation with an operator-friendly interface</li>
+                <li>Reduced about two hours of research per call</li>
+              </ul>
+              <a class="work-item__link" href="https://github.com/nedu-m/prepcall" target="_blank"
+                rel="noopener noreferrer">View on GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-item reveal">
+          <div class="work-item__index">04 / Production agent</div>
+          <div class="work-item__body">
+            <div class="work-item__left">
+              <p class="work-item__type">Job-market intelligence agent</p>
+              <h3 class="work-item__title">RoleRadar</h3>
+              <p class="work-item__desc">Production AI agent that scrapes Greenhouse, Lever, and BambooHR ATS platforms, scores listings against a candidate profile, deduplicates, and delivers qualified matches to Telegram on a schedule.</p>
+              <div class="work-item__tags">
+                <span>GPT-4o-mini</span>
+                <span>Eval-driven tuning</span>
+                <span>Multi-ATS</span>
+              </div>
+            </div>
+            <div class="work-item__right">
+              <p>Wrote evals on ranking accuracy, dedup rate, and false-positive rate to tune prompts and filters before and after deployment — iterated agent logic on real-world output data.</p>
+              <ul>
+                <li>Python, Flask, SQLite, Telegram Bot API</li>
+                <li>BambooHR, Greenhouse, Lever ATS integrations</li>
+                <li>GPT-4o-mini with function calling for structured scoring</li>
+                <li>Deployed on personal DigitalOcean infrastructure</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-item reveal">
+          <div class="work-item__index">05 / Experimental build</div>
+          <div class="work-item__body">
+            <div class="work-item__left">
+              <p class="work-item__type">Desktop agent</p>
+              <h3 class="work-item__title">Clicky for macOS</h3>
+              <p class="work-item__desc">Adapted an open-source desktop companion into a screen-aware agent with vision
+                support, pointer overlays, and streaming speech.</p>
+              <div class="work-item__tags">
+                <span>Swift client</span>
+                <span>Vision models</span>
+                <span>Voice loop</span>
+              </div>
+            </div>
+            <div class="work-item__right">
+              <p>Extended into a real-time desktop workflow with multimodal model support and multi-provider voice
+                infrastructure.</p>
+              <ul>
+                <li>Swift, ScreenCaptureKit, TypeScript Cloudflare Worker, AssemblyAI</li>
+                <li>Inline overlays, streaming transcription, and TTS playback</li>
+              </ul>
+              <a class="work-item__link" href="https://github.com/nedu-m/clicky" target="_blank"
+                rel="noopener noreferrer">View on GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ SYSTEMS -->
+    <section id="systems" class="section">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">02</span>
+        <div>
+          <p class="eyebrow">Systems Thinking</p>
+          <h2 class="section__title">I work across the layers that make products feel coherent.</h2>
+        </div>
+      </div>
+
+      <div class="systems reveal">
+        <article class="sys-card sys-card--wide">
+          <span class="sys-card__label">Product engineering</span>
+          <h3>Interfaces with strong structure, sharp implementation, and clear behavior.</h3>
+          <p>React, Next.js, TypeScript, design systems, frontend architecture, and clean UI execution.</p>
+        </article>
+        <article class="sys-card">
+          <span class="sys-card__label">Backend systems</span>
+          <h3>Services designed for reliability and growth.</h3>
+          <p>Node.js, Python, FastAPI, Express, PostgreSQL, Redis, APIs, and service design.</p>
+        </article>
+        <article class="sys-card">
+          <span class="sys-card__label">Cloud and delivery</span>
+          <h3>Infrastructure that can be deployed, observed, and trusted.</h3>
+          <p>AWS, DigitalOcean, Cloudflare, Docker, Kubernetes, Terraform, CI/CD.</p>
+        </article>
+        <article class="sys-card">
+          <span class="sys-card__label">AI and agents</span>
+          <h3>Model-driven workflows shaped for real operation.</h3>
+          <p>Claude Code, Anthropic API, OpenAI API, eval loops, extraction systems, agent workflows.</p>
+        </article>
+        <article class="sys-card sys-card--principle">
+          <span class="sys-card__label">Working principle</span>
+          <blockquote>Fast, not fragile. Operable by design. Measured in production.</blockquote>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">03</span>
+        <div>
+          <p class="eyebrow">Experience</p>
+          <h2 class="section__title">A builder arc across infrastructure, delivery, mentorship, and technical sales.
+          </h2>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline__row reveal">
+          <span class="timeline__when">2026 — Present</span>
+          <div class="timeline__what">
+            <h3>Founding Engineer / DevOps Lead</h3>
+            <p class="timeline__where">Tech Policy Advisory</p>
+            <p>Built production infrastructure from scratch, shipped CI/CD and observability, and delivered
+              Claude-powered policy extraction with 99.9% uptime since launch.</p>
+          </div>
+        </article>
+        <article class="timeline__row reveal">
+          <span class="timeline__when">2023 — 2026</span>
+          <div class="timeline__what">
+            <h3>Pre-Sales Technical Specialist</h3>
+            <p class="timeline__where">DataFlex Nigeria</p>
+            <p>Built internal AI and automation systems while supporting enterprise deals and translating technical
+              complexity into clear decisions.</p>
+          </div>
+        </article>
+        <article class="timeline__row reveal">
+          <span class="timeline__when">2022 — 2024</span>
+          <div class="timeline__what">
+            <h3>Lead Mentor / Software Engineer</h3>
+            <p class="timeline__where">Springboard USA</p>
+            <p>Led a nine-engineer mentorship cohort, set review and deployment standards, and helped distributed teams
+              build with more confidence.</p>
+          </div>
+        </article>
+        <article class="timeline__row reveal">
+          <span class="timeline__when">2019 — 2022</span>
+          <div class="timeline__what">
+            <h3>Software Developer, from Intern to Lead</h3>
+            <p class="timeline__where">AppSwift</p>
+            <p>Grew from intern to lead while owning architecture, product builds, and production deployments across
+              multiple client projects.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ NOTES -->
+    <section id="notes" class="section">
+      <div class="section__head">
+        <span class="section__num" aria-hidden="true">04</span>
+        <div>
+          <p class="eyebrow">Writing and Inputs</p>
+          <h2 class="section__title">Writing in public. Learning in motion.</h2>
+        </div>
+      </div>
+
+      <div class="notes reveal">
+        <div class="notes__main">
+          <div class="note-card">
+            <p class="note-card__site">builderswhosell.com</p>
+            <p>Essays on product, distribution, and durable edges in the AI era.</p>
+            <a href="https://builderswhosell.com" target="_blank" rel="noopener noreferrer">Read the essays ↗</a>
+          </div>
+        </div>
+        <div class="notes__side">
+          <div class="reading-list">
+            <p class="label">Reading</p>
+            <ul>
+              <li>The Lean Startup</li>
+              <li>The Mom Test</li>
+              <li>The Hard Thing About Hard Things</li>
+            </ul>
+          </div>
+          <div class="reading-list">
+            <p class="label">Listening</p>
+            <ul>
+              <li>Naval Podcast</li>
+              <li>A Bit of Optimism</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer">
-    <div class="footer-cta">
-      <p class="footer-cta__line">Have something to build?</p>
-      <a href="mailto:davidsonchinedum@gmail.com" class="footer-cta__link">davidsonchinedum@gmail.com <span class="arrow">&rarr;</span></a>
+  <!-- ═══════════════════════════════════════ FOOTER / CONTACT -->
+  <footer id="contact" class="footer reveal">
+    <div class="footer__inner">
+      <div class="footer__copy">
+        <p class="eyebrow">Contact</p>
+        <h2 class="footer__title">Need someone who can own the system, not just part of it?</h2>
+        <p>Open to select roles, consulting, and focused product collaborations.</p>
+      </div>
+      <div class="footer__links">
+        <a class="btn btn--primary" href="mailto:davidsonchinedum@gmail.com">davidsonchinedum@gmail.com</a>
+        <div class="footer__socials">
+          <a href="https://github.com/nedu-m" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+      <p class="footer__credit">
+        Chukwunedum Davidson · Lagos, Nigeria · <span id="footerYear"></span>
+      </p>
     </div>
   </footer>
 
-  <svg class="cursor" width="100" height="100" viewBox="0 0 100 100">
-    <defs>
-      <filter id="cursor-filter" x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox">
-        <feTurbulence type="fractalNoise" baseFrequency="0" numOctaves="1" result="warp" />
-        <feOffset dx="0" result="warpOffset" />
-        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="40" in="SourceGraphic" in2="warpOffset" />
-      </filter>
-    </defs>
-    <circle class="cursor__inner" cx="50" cy="50" r="10" />
-  </svg>
-  <svg class="cursor" width="100" height="100" viewBox="0 0 100 100" data-amt="0.15" data-radius-enter="40">
-    <circle class="cursor__inner" cx="50" cy="50" r="10" />
-  </svg>
   <script type="module" src="js/index.js"></script>
   <script nomodule src="js/fallback.js"></script>
 </body>

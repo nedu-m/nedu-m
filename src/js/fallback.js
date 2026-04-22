@@ -1,101 +1,103 @@
-// Fallback script for browsers that don't support ES modules
-// This file uses ES5 syntax for maximum compatibility
 (function () {
-  // Helper for classList (IE10+ support)
   function hasClass(el, cls) {
-    return el.className && el.className.indexOf(cls) !== -1;
+    return el.className && new RegExp("(^|\\s)" + cls + "(\\s|$)").test(el.className);
   }
+
   function addClass(el, cls) {
     if (!hasClass(el, cls)) {
-      el.className = (el.className ? el.className + ' ' : '') + cls;
+      el.className = el.className ? el.className + " " + cls : cls;
     }
   }
+
   function removeClass(el, cls) {
-    if (el.className) {
-      el.className = el.className.replace(new RegExp('(^|\\s)' + cls + '(\\s|$)', 'g'), ' ').trim();
-    }
+    if (!el.className) return;
+    el.className = el.className.replace(new RegExp("(^|\\s)" + cls + "(\\s|$)", "g"), " ").replace(/\s+/g, " ").replace(/^\s+|\s+$/g, "");
   }
 
-  // Mobile menu toggle
-  function setupMobileMenu() {
-    var menuBtn = document.querySelector('.frame__menu-btn');
-    var nav = document.querySelector('.frame__nav');
-    var frame = document.querySelector('.frame');
-    if (!menuBtn || !nav || !frame) return;
+  function initNavigation() {
+    var nav = document.querySelector(".nav");
+    var toggle = document.querySelector(".nav__toggle");
+    var links = document.querySelector(".nav__links");
+    if (!nav || !toggle || !links) return;
 
-    function closeMenu() {
-      removeClass(frame, 'frame--open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+    function closeNav() {
+      removeClass(nav, "nav--open");
+      toggle.setAttribute("aria-expanded", "false");
     }
 
-    function openMenu() {
-      addClass(frame, 'frame--open');
-      menuBtn.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
+    function openNav() {
+      addClass(nav, "nav--open");
+      toggle.setAttribute("aria-expanded", "true");
     }
 
-    function toggleMenu(e) {
-      e.preventDefault();
-      if (hasClass(frame, 'frame--open')) {
-        closeMenu();
+    toggle.addEventListener("click", function () {
+      if (hasClass(nav, "nav--open")) {
+        closeNav();
       } else {
-        openMenu();
+        openNav();
       }
+    });
+
+    var navLinks = links.querySelectorAll("a");
+    for (var i = 0; i < navLinks.length; i += 1) {
+      navLinks[i].addEventListener("click", closeNav);
     }
 
-    menuBtn.addEventListener('click', toggleMenu);
-
-    // Close menu when clicking a link
-    var links = nav.querySelectorAll('.frame__link');
-    for (var i = 0; i < links.length; i++) {
-      links[i].addEventListener('click', closeMenu);
-    }
-
-    // Close menu on escape key
-    document.addEventListener('keydown', function (e) {
-      if ((e.key === 'Escape' || e.keyCode === 27) && hasClass(frame, 'frame--open')) {
-        closeMenu();
-        menuBtn.focus();
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" || event.keyCode === 27) {
+        closeNav();
       }
     });
   }
 
-  // Project toggles
-  function setupProjectToggles() {
-    var toggles = document.querySelectorAll('.project__toggle');
-    for (var i = 0; i < toggles.length; i++) {
-      (function (toggle) {
-        if (toggle.getAttribute('data-setup')) return;
-        toggle.setAttribute('data-setup', 'true');
+  function initLocalTime() {
+    var localTime = document.getElementById("localTime");
+    if (!localTime) return;
 
-        var handler = function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          var project = toggle.parentElement;
-          while (project && !hasClass(project, 'project')) {
-            project = project.parentElement;
-          }
-          if (!project) return;
-          var isExpanded = project.getAttribute('aria-expanded') === 'true';
-          var newState = isExpanded ? 'false' : 'true';
-          project.setAttribute('aria-expanded', newState);
-          toggle.setAttribute('aria-expanded', newState);
-        };
-
-        toggle.addEventListener('click', handler);
-      })(toggles[i]);
+    function pad(value) {
+      return value < 10 ? "0" + value : String(value);
     }
+
+    function updateTime() {
+      var now = new Date();
+      var utc = now.getTime() + now.getTimezoneOffset() * 60000;
+      var lagos = new Date(utc + 3600000);
+      localTime.innerHTML = pad(lagos.getHours()) + ":" + pad(lagos.getMinutes()) + " WAT";
+    }
+
+    updateTime();
+    setInterval(updateTime, 30000);
   }
 
-  // Initialize
+  function initStatusLine() {
+    var statusLine = document.getElementById("statusLine");
+    if (!statusLine) return;
+
+    var statuses = [
+      "Shipping AI systems with production discipline",
+      "Designing reliable infrastructure",
+      "Turning rough ideas into durable software",
+      "Refining agent behavior with evals",
+      "Building products teams can operate"
+    ];
+
+    var currentIndex = 0;
+    statusLine.innerHTML = statuses[currentIndex];
+
+    setInterval(function () {
+      currentIndex = (currentIndex + 1) % statuses.length;
+      statusLine.innerHTML = statuses[currentIndex];
+    }, 3600);
+  }
+
   function init() {
-    setupMobileMenu();
-    setupProjectToggles();
+    initNavigation();
+    initLocalTime();
+    initStatusLine();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
   } else {
     init();
   }
