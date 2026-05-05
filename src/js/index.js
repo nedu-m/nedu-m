@@ -66,11 +66,11 @@ function initStatusLine() {
     if (!el) return;
 
     const statuses = [
-        'Shipping AI systems with production discipline',
-        'Designing reliable infrastructure',
-        'Turning rough ideas into durable software',
-        'Refining agent behavior with evals',
-        'Building products teams can operate'
+        'Hunting vulnerabilities in AI-generated SaaS',
+        'Running the recipe library on a new target',
+        'Turning LLM training bias into systematic findings',
+        'Probing OAuth connectors for state forgery',
+        'Building the VibeScan research operation'
     ];
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
