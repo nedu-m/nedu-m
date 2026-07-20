@@ -1,19 +1,26 @@
 {
-  "name": "v4-folio",
+  "name": "nedum-portfolio",
   "version": "1.0.0",
   "engines": {
     "node": ">=22.0.0"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
-  "description": "",
+  "description": "Evidence-led portfolio for senior QA engineer Chukwunedum Davidson.",
   "scripts": {
     "start": "parcel src/index.html --open",
     "clean": "rm -rf dist/*",
     "build:parcel": "parcel build src/index.html --no-content-hash --no-source-maps --public-url ./",
     "build": "npm run clean && npm run build:parcel"
   },
-  "keywords": [],
+  "keywords": [
+    "quality assurance",
+    "test automation",
+    "software engineering",
+    "product security"
+  ],
   "devDependencies": {
+    "@parcel/packager-raw-url": "^2.16.4",
+    "@parcel/transformer-jsonld": "^2.16.4",
     "@parcel/transformer-sass": "^2.8.1",
     "parcel": "^2.4.1"
   },
