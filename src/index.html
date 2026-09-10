@@ -152,6 +152,25 @@
             known blocker open.</p>
         </article>
 
+        <article class="evidence-card">
+          <div class="card-topline">
+            <span>Independent research · Responsible disclosure</span>
+            <a href="https://shippedwithbugs.com/writeups/postiz" target="_blank" rel="noopener noreferrer"
+              aria-label="Read the Postiz writeup">Read the writeup ↗</a>
+          </div>
+          <h3>One reused JWT secret became SUPERADMIN on a payments SaaS.</h3>
+          <p>A single JWT secret signed six unrelated token purposes with no audience claim, and the auth middleware
+            trusted claims without re-resolving the user. A free account could forge SUPERADMIN access — and
+            separately, the crypto-payment webhook accepted attacker-chosen fields to grant unlimited lifetime upgrades.</p>
+          <dl class="metric-row metric-row--three">
+            <div><dt>3</dt><dd>public advisories</dd></div>
+            <div><dt>55min</dt><dd>time to fix</dd></div>
+            <div><dt>CRIT</dt><dd>CVE-2026-48781</dd></div>
+          </dl>
+          <p class="card-foot">Outcome: root-caused to purpose-bound tokens, key separation, and payment-callback
+            binding — not a point patch.</p>
+        </article>
+
         <article class="evidence-card evidence-card--compact">
           <p class="tag">Enterprise validation</p>
           <h3>2 days → under 4 hours</h3>
