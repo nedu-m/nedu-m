@@ -10,7 +10,9 @@
     "start": "parcel src/index.html --open",
     "clean": "rm -rf dist/*",
     "build:parcel": "parcel build src/index.html --no-source-maps --public-url ./",
-    "build": "npm run clean && npm run build:parcel"
+    "copy:static": "cp -r static/. dist/",
+    "build": "npm run clean && npm run build:parcel && npm run copy:static",
+    "indexnow:submit": "node scripts/submit-indexnow.mjs"
   },
   "keywords": [
     "quality assurance",

@@ -1,0 +1,30 @@
+# Chukwunedum Davidson (Nedu)
+
+> Senior QA, Security & Software Engineer based in Lagos, Nigeria. Independently available for remote contract QA automation, test strategy, release-quality, and product-security work.
+
+Canonical site: https://nedum.xyz/
+
+## Summary
+
+Seven years of software engineering with five-plus years of quality and security ownership: risk-based test strategy, maintainable automation (Playwright, Cypress, Selenium, Appium), API/data/integration testing, CI/CD quality gates, release sign-off, and product security (authorization, OAuth, multi-tenant isolation, SSRF, CORS). Credited with 2 CVEs and 3 GitHub Security Advisories from independent, authorized vulnerability research.
+
+## Best fit
+
+- Remote contract or full-time Senior QA Engineer, SDET, Test Automation Engineer, or QA Automation Engineer roles.
+- Product security / application security work adjacent to QA (authorization testing, secure SDLC).
+- B2B SaaS, platform, and process-heavy products needing release-quality ownership, not just test execution.
+- Distributed, cross-functional, remote-first teams.
+
+## Evidence
+
+- 71 automated checks in one core regression suite; reduced full regression from 2 days to 5 hours.
+- Quality-gated a 13-service production platform: 67 risk-based scenarios, 19 deployments steered, no release shipped with a known blocker open.
+- Independent security research: [Shipped With Bugs](https://shippedwithbugs.com/) — authorized SaaS security reviews and public vulnerability disclosures, 2 CVEs and 3 GHSAs, including CVE-2026-48781 (JWT confused-deputy → SUPERADMIN takeover on a payments SaaS).
+
+## Contact
+
+- Email: davidsonchinedum@gmail.com
+- Portfolio: https://nedum.xyz/
+- Security research: https://shippedwithbugs.com/
+- GitHub: https://github.com/nedu-m
+- LinkedIn: https://www.linkedin.com/in/chukwunedum-davidson-24a1aa21b/
