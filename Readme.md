@@ -1,4 +1,4 @@
-# Chukwunedum Davidson — Senior QA Engineer
+# Chukwunedum Davidson: Senior QA Engineer, AI-enabled QA
 
 Lagos, Nigeria · [nedum.xyz](https://nedum.xyz/) · davidsonchinedum@gmail.com
 
@@ -8,22 +8,51 @@ releases rather than decorating a report. Seven years in software engineering, t
 several focused on senior quality engineering, release ownership, and product security
 research.
 
+Lately most of that work is **testing AI output**: LLM features fail confidently,
+plausibly and inconsistently, so I test them against golden sets, measure precision and
+recall, require every answer to cite its source, and block prompt or model changes that
+make any result worse.
+
 Responsible-disclosure work has earned public credit for **2 CVEs** and
 **3 GitHub Security Advisories**.
 
+## Featured: grounded extraction QA
+
+**[qa.nedum.xyz](https://qa.nedum.xyz)** · [source](https://github.com/nedu-m/grounded-extraction-qa)
+
+QA harness for AI that extracts figures from financial statements, the kind of
+tooling used in acquisition due diligence and financial analysis.
+
+- **LLM evaluation:** golden-set testing with precision, recall and grounded recall
+  across six labelled balance sheets and income statements.
+- **Hallucination detection:** every extracted value must quote its source line, and
+  a citation that does not contain its value is caught as fabricated.
+- **Financial data validation:** statements in thousands or millions, ambiguous dates,
+  and balance sheets that do not foot.
+- **Regression gating:** a release gate that fails any prompt or model change that
+  makes a single field worse, run in CI on every commit.
+- **SQL data-quality checks** over a diligence data room: duplicate uploads, missing
+  checklist items, cross-source reconciliation, and brand-asset mismatches.
+- **API testing:** FastAPI service with a Postman collection; 343 pytest tests.
+
 ## What I work on
 
-- **Release ownership** — measurable acceptance criteria, explicit release gates,
+- **AI-enabled QA:** LLM output evaluation, golden datasets, precision and recall,
+  hallucination and fabricated-fact detection, regression testing of prompt changes.
+- **Release ownership:** measurable acceptance criteria, explicit release gates,
   rollback conditions, and post-deployment verification.
-- **Test automation** — Playwright, Cypress, pytest, and Python/TypeScript harnesses
+- **Test automation:** Playwright, Cypress, pytest, and Python/TypeScript harnesses
   running deterministic integration, API, and failure-path checks in CI.
-- **Product security research** — authorization, OAuth, multi-tenant boundaries,
+- **Data and integration testing:** SQL reconciliation, data-quality checks, and
+  approval-workflow and permission boundaries across integrated systems.
+- **Product security research:** authorization, OAuth, multi-tenant boundaries,
   integrations, billing state, and cross-layer business rules.
-- **[Shipped With Bugs](https://shippedwithbugs.com)** — independent QA and
+- **[Shipped With Bugs](https://shippedwithbugs.com):** independent QA and
   responsible-disclosure research on B2B SaaS.
 
-**Toolkit:** Playwright · Cypress · pytest · Postman · REST APIs · SQL / PostgreSQL ·
-Python · JavaScript / TypeScript · Java · Selenium · Docker · GitHub Actions · Jira
+**Toolkit:** Playwright · Cypress · Selenium · pytest · Postman · REST APIs ·
+SQL / PostgreSQL · Python · JavaScript / TypeScript · Java · FastAPI · LLM APIs
+(OpenAI-compatible, DeepSeek, Claude) · Docker · GitHub Actions · Jira
 
 ## Where to find me
 
@@ -37,7 +66,7 @@ Python · JavaScript / TypeScript · Java · Selenium · Docker · GitHub Action
 ---
 
 <details>
-<summary><b>About this repository</b> — source for nedum.xyz</summary>
+<summary><b>About this repository</b>: source for nedum.xyz</summary>
 
 <br>
 
